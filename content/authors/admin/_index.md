@@ -47,6 +47,7 @@ interests:
   - Computational Linguistics
   - Information Retrieval
 
+<!-- 
 education:
   - area: PhD Artificial Intelligence
     institution: Stanford University
@@ -103,6 +104,8 @@ work:
       - Migrated infrastructure to a new data center
       - lorem ipsum dolor sit amet, consectetur adipiscing elit
       - lorem ipsum dolor sit amet, consectetur adipiscing elit
+      
+your comment here -->
 ---
 
 ## About Us
