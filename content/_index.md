@@ -24,7 +24,7 @@ sections:
         color: black
         image:
           # Add your image background to `assets/media/`.
-          filename: network_background.jpeg
+          filename: network_background.avif
           filters:
             brightness: 1.0
           size: cover
