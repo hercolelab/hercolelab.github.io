@@ -20,16 +20,16 @@ sections:
         #url: uploads/resume.pdf
     #design:
       #css_class: dark
-      #background:
-        #color: black
-        #image:
+      background:
+        color: black
+        image:
           # Add your image background to `assets/media/`.
-          #filename: background_black.jpg
-          #filters:
-            #brightness: 1.0
-          #size: cover
-          #position: center
-          #parallax: false
+          filename: background_black2.jpg
+          filters:
+            brightness: 1.0
+          size: cover
+          position: center
+          parallax: false
   - block: markdown
     content:
       title: '📚 My Research'
