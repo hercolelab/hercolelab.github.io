@@ -1,6 +1,6 @@
 ---
 # Display name
-title: HERCOLE Lab
+title: 
 
 # Full name (for SEO)
 first_name: HERCOLE
@@ -17,7 +17,7 @@ superuser: false
 highlight_name: false
 
 # Role/position/tagline
-role: Computer Science Laboratory
+role: 
 
 # Organizations/Affiliations to display in Biography blox
 organizations:
@@ -106,6 +106,6 @@ interests:
       
 ---
 
-## About Us
+# Welcome to HERCOLE Lab
 
-We are the **H**uman-**E**xplainable, **R**obust, and **CO**llaborative **LE**arning (**HERCOLE**) Lab, launched in 2021.
+We are the **H**uman-**E**xplainable, **R**obust, and **CO**llaborative **LE**arning (**HERCOLE**) Laboratory.
