@@ -1,6 +1,6 @@
 ---
 # Display name
-title: 
+title: Welcome to HERCOLE Lab
 
 # Full name (for SEO)
 first_name: HERCOLE
@@ -105,8 +105,6 @@ profiles:
       #- lorem ipsum dolor sit amet, consectetur adipiscing elit
       
 ---
-
-# Welcome to HERCOLE Lab
 
 Explore our research in **H**uman-**E**xplainable, **R**obust, and **CO**llaborative **LE**arning.
 
