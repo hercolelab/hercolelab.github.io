@@ -41,10 +41,8 @@ profiles:
   #- icon: academicons/orcid
   #  url: https://orcid.org/0000-0001-7471-6659
 
-interests:
-  - Artificial Intelligence
-  - Computational Linguistics
-  - Information Retrieval
+research mission:
+  prova
 
 
 #education:
