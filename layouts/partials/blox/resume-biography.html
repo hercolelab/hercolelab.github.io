@@ -36,7 +36,7 @@
 {{ end }}
 
 <div id="profile" class="resume-biography flex justify-center items-center flex-col dark:text-white">
-  <div class="text-6xl font-bold mb-4 mt-4">
+  <div class="text-6xl font-bold mb-4 mt-2">
     {{- if $person.name_pronunciation -}}
       <ruby>
         <rb>{{ $person_page.Title }}</rb>
@@ -49,18 +49,10 @@
   
   {{ if $avatar }}
 
-  <div class="avatar-wrapper {{ if $img }}-mt-[105px]{{ else }}mt-10{{ end }} mb-6 flex justify-center">
-    {{ $avatar_image := $avatar.Fill "200x200 Center" }}
-    <img
-     class="avatar
-            w-[200px] h-[200px]      /* forza quadrato 200×200 */
-            object-cover             /* riempi senza deformare */
-            rounded-full             /* bordo circolare */
-            bg-white dark:bg-gray-800
-            p-1"
-     src="{{ $avatar_image.RelPermalink }}"
-     alt="{{ $person_page.Title }}"
-   />
+  <div class="avatar-wrapper {{ if $img }}-mt-[105px]{{else}}mt-10{{end}}">
+    {{ $avatar_image := $avatar.Fill "150x150 Center" }}
+    <img class="avatar rounded-full bg-white dark:bg-gray-800 p-1" src="{{ $avatar_image.RelPermalink }}" alt="{{$person_page.Title}}"
+         width="{{ $avatar_image.Width }}" height="{{ $avatar_image.Height }}">
     {{with $person.status.icon}}<span class="avatar-emoji">{{.|emojify}}</span>{{end}}
   </div>
   {{ end }}
@@ -101,7 +93,7 @@
   </ul>
 
   {{ with ($block.content.text | emojify | $page.RenderString) | default $person_page.Content }}
-  <div class="pt-2 d-flex justify-content-center prose prose-slate lg:prose-3xl dark:prose-invert">
+  <div class="pt-2 d-flex justify-content-center prose prose-slate lg:prose-5xl dark:prose-invert">
     <div class="bio-text" {{ with $block.design.biography.style }}{{ (printf "style=\"%s\"" .) | safe.HTMLAttr }}{{end}}>
       {{ . }}
     </div>
