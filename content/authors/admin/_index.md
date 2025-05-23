@@ -106,6 +106,6 @@ profiles:
       
 ---
 
-Explore our research in **H**uman-**E**xplainable, **R**obust, and **CO**llaborative **LE**arning.
+**H**uman-**E**xplainable, **R**obust, and **CO**llaborative **LE**arning.
 
 
