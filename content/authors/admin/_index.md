@@ -108,4 +108,4 @@ interests:
 
 # Welcome to HERCOLE Lab
 
-We are the **H**uman-**E**xplainable, **R**obust, and **CO**llaborative **LE**arning (**HERCOLE**) Laboratory.
+Welcome to the **H**uman-**E**xplainable, **R**obust, and **CO**llaborative **LE**arning (**HERCOLE**) Laboratory homepage!
