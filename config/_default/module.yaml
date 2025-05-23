@@ -10,16 +10,25 @@ imports:
 
 # Install any Hugo Blox within the `hugo-blox/blox/` folder
 mounts:
-  - source: hugo-blox/blox/community
-    target: layouts/partials/blox/community/
-    includeFiles: '**.html'
-  - source: hugo-blox/blox/all-access
-    target: layouts/partials/blox/
-    includeFiles: '**.html'
+  # blocchi community (incluso resume-biography-1.html)
+  - source: hugo-blox/blox/community/layouts/blox
+    target: layouts/blox/community
+    includeFiles: '**/*.html'
+
+  # blocchi all-access (incluso resume-biography-3.html)
+  - source: hugo-blox/blox/all-access/layouts/blox
+    target: layouts/blox/all-access
+    includeFiles: '**/*.html'
+
+  # CSS dei blocchi community
   - source: hugo-blox/blox
-    target: assets/dist/community/blox/
-    includeFiles: '**.css'
+    target: assets/dist/community/blox
+    includeFiles: '**/*.css'
+
+  # i tuoi layouts “override” o custom
   - source: layouts
     target: layouts
+
+  # le tue risorse statiche
   - source: assets
     target: assets

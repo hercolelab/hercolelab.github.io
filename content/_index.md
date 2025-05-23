@@ -10,7 +10,7 @@ design:
 
 sections:
 
-  - block: resume-biography-3
+  - block: resume-biography-1
     content:
       username: admin
       text: ""
