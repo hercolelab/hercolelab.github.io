@@ -4,31 +4,24 @@
 ## Docs: https://gohugo.io/hugo-modules/
 ############################
 
-imports:
-  - path: github.com/HugoBlox/hugo-blox-builder/modules/blox-plugin-netlify
-  - path: github.com/HugoBlox/hugo-blox-builder/modules/blox-tailwind
+module:
+  imports:
+    - path: github.com/HugoBlox/hugo-blox-builder/modules/blox-plugin-netlify
+    - path: github.com/HugoBlox/hugo-blox-builder/modules/blox-tailwind
+    - path: github.com/hugo-blox/hugo-blox-builder@v0.3.1
 
-# Install any Hugo Blox within the `hugo-blox/blox/` folder
 mounts:
-  # blocchi community (incluso resume-biography-1.html)
-  - source: hugo-blox/blox/community/layouts/blox
+  # monta tutti i blox “community”
+  - source: modules/blox-tailwind/layouts/blox/community
     target: layouts/blox/community
     includeFiles: '**/*.html'
 
-  # blocchi all-access (incluso resume-biography-3.html)
-  - source: hugo-blox/blox/all-access/layouts/blox
+  # monta tutti i blox “all-access”
+  - source: modules/blox-tailwind/layouts/blox/all-access
     target: layouts/blox/all-access
     includeFiles: '**/*.html'
 
-  # CSS dei blocchi community
-  - source: hugo-blox/blox
-    target: assets/dist/community/blox
+  # (opzionale) monta anche i CSS dei blox
+  - source: modules/blox-tailwind/assets/dist
+    target: assets/dist
     includeFiles: '**/*.css'
-
-  # i tuoi layouts “override” o custom
-  - source: layouts
-    target: layouts
-
-  # le tue risorse statiche
-  - source: assets
-    target: assets
