@@ -36,7 +36,7 @@
 {{ end }}
 
 <div id="profile" class="resume-biography flex justify-center items-center flex-col dark:text-white">
-  <div class="text-4xl font-bold mb-2 mt-6">
+  <div class="text-5xl font-bold mb-2 mt-6">
     {{- if $person.name_pronunciation -}}
       <ruby>
         <rb>{{ $person_page.Title }}</rb>
@@ -51,8 +51,11 @@
 
   <div class="avatar-wrapper {{ if $img }}-mt-[105px]{{ else }}mt-10{{ end }} mb-6 flex justify-center">
     {{ $avatar_image := $avatar.Fill "300x300 Center" }}
-    <img class="avatar rounded-full bg-white dark:bg-gray-800 p-1 mx-auto" src="{{ $avatar_image.RelPermalink }}" alt="{{$person_page.Title}}"
-         width="{{ $avatar_image.Width }}" height="{{ $avatar_image.Height }}">
+    <img
++      class="avatar w-[300px] h-[300px] object-cover rounded-full bg-white dark:bg-gray-800 p-1 mx-auto"
++      src="{{ $avatar_image.RelPermalink }}"
++      alt="{{ $person_page.Title }}"
++    />
     {{with $person.status.icon}}<span class="avatar-emoji">{{.|emojify}}</span>{{end}}
   </div>
   {{ end }}
