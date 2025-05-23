@@ -35,72 +35,54 @@
 {{ end }}
 {{ end }}
 
-<div id="profile" class="resume-biography flex justify-center items-center flex-col dark:text-white">
+<div id="profile" class="resume-biography flex flex-col items-center dark:text-white">
 
-  <!-- 1) Titolo + Ruolo -->
-  <div class="text-3xl font-bold mb-2 mt-6">
+  <!-- 1) TITLE -->
+  <div class="text-4xl font-bold mb-4 text-center">
     {{- if $person.name_pronunciation -}}
       <ruby>
         <rb>{{ $person_page.Title }}</rb>
         <rt>{{ $person.name_pronunciation }}</rt>
       </ruby>
     {{- else -}}
-      {{- $person_page.Title -}}
+      {{ $person_page.Title }}
     {{- end -}}
   </div>
-  {{ with $person.role }}
-    <h3 class="font-semibold mb-6">{{ . | markdownify | emojify }}</h3>
-  {{ end }}
 
-  <!-- 2) Avatar/Logo -->
+  <!-- 2) AVATAR + SOCIAL -->
   {{ if $avatar }}
-    <div class="avatar-wrapper mb-6">
-      {{ $avatar_image := $avatar.Fill "150x150 Center" }}
+    <div class="mb-6 flex flex-col items-center">
+      {{ $avatar_image := $avatar.Fill "200x200 Center" }}
       <img
-        class="avatar rounded-full bg-white dark:bg-gray-800 p-1"
+        class="avatar rounded-full bg-white dark:bg-gray-800 p-2"
         src="{{ $avatar_image.RelPermalink }}"
         alt="{{ $person_page.Title }}"
         width="{{ $avatar_image.Width }}"
         height="{{ $avatar_image.Height }}"
-      >
-      {{ with $person.status.icon }}
-        <span class="avatar-emoji">{{ . | emojify }}</span>
-      {{ end }}
+      />
+
+      <ul class="mt-4 flex space-x-4 text-2xl">
+        {{ range $person.profiles }}
+          {{ $link := .url | default .link }}
+          <li>
+            <a href="{{ $link | safeURL }}"
+               target="_blank" rel="noopener"
+               aria-label="{{ .label | default .icon }}">
+              {{ partial "functions/get_icon" (dict "name" .icon "attributes" "style=\"height: 2rem;\"") }}
+            </a>
+          </li>
+        {{ end }}
+      </ul>
     </div>
   {{ end }}
 
-  <!-- 3) Testo/Bio -->
+  <!-- 3) BIO / TEXT -->
   {{ with ($block.content.text | emojify | $page.RenderString) | default $person_page.Content }}
-    <div class="pt-2 prose prose-slate lg:prose-xl dark:prose-invert mb-6">
-      <div class="bio-text" {{ with $block.design.biography.style }}{{ printf "style=\"%s\"" . | safeHTMLAttr }}{{ end }}>
-        {{ . }}
-      </div>
+    <div class="prose prose-slate lg:prose-xl dark:prose-invert text-center max-w-2xl">
+      {{ . }}
     </div>
   {{ end }}
-
-  <!-- (Opzionale) Organizzazioni -->
-  {{ range $person.organizations }}
-    <div class="mb-2">
-      {{ with .url }}<a href="{{ . }}" target="_blank" rel="noopener">{{ end }}
-        {{ .name }}
-      {{ if .url }}</a>{{ end }}
-    </div>
-  {{ end }}
-
-  <!-- (Opzionale) Social icons -->
-  <ul class="network-icon dark:text-zinc-100">
-    {{ range $person.profiles }}
-      {{ $pack := or .icon_pack "fas" }}
-      {{ $pack_prefix := cond (in (slice "fab" "fas" "far" "fal") $pack) "fa" "" }}
-      <li class="inline-block mx-2">
-        <a href="{{ .url | safeURL }}"
-           {{ with .label }}aria-label="{{.}}" title="{{.}}"{{ end }}
-           target="_blank" rel="noopener">
-          {{ partial "functions/get_icon" (dict "name" .icon "attributes" "style=\"height: 1.5rem;\"") }}
-        </a>
-      </li>
-    {{ end }}
-  </ul>
 
 </div>
+
 
