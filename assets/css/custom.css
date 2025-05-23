@@ -1,0 +1,9 @@
+/* Forza il blocco bio-3 a impilarsi verticalmente */
+.resume-biography-3 .media {
+  display: flex !important;
+  flex-direction: column !important;
+  align-items: center;
+}
+.resume-biography-3 .media-img {
+  margin-bottom: 1rem;
+}
