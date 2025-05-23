@@ -46,9 +46,6 @@ profiles:
 #  - Computational Linguistics
 #  - Information Retrieval
 
-research_mission:
-  prova
-
 
 #education:
   #- area: PhD Artificial Intelligence
@@ -112,3 +109,5 @@ research_mission:
 # Welcome to HERCOLE Lab
 
 Explore our research in **H**uman-**E**xplainable, **R**obust, and **CO**llaborative **LE**arning.
+
+
