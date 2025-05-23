@@ -28,18 +28,18 @@ organizations:
 # Need to use another icon? Simply download the SVG icon to your `assets/media/icons/` folder.
 profiles:
   - icon: at-symbol
-    url: 'mailto:your-email@example.com'
+    url: 'hercolelab@di.uniroma1.it'
     label: E-mail Me
   - icon: brands/x
     url: https://x.com/HercoleLab
   - icon: brands/github
     url: https://github.com/hercolelab
-  - icon: brands/linkedin
-    url: https://www.linkedin.com/in/gabrieletolomei/
-  - icon: academicons/google-scholar
-    url: https://scholar.google.com/citations?user=Y2R2DXEAAAAJ&hl=en
-  - icon: academicons/orcid
-    url: https://orcid.org/0000-0001-7471-6659
+  #- icon: brands/linkedin
+  #  url: https://www.linkedin.com/in/gabrieletolomei/
+  #- icon: academicons/google-scholar
+  #  url: https://scholar.google.com/citations?user=Y2R2DXEAAAAJ&hl=en
+  #- icon: academicons/orcid
+  #  url: https://orcid.org/0000-0001-7471-6659
 
 interests:
   - Artificial Intelligence
@@ -108,4 +108,4 @@ interests:
 
 # Welcome to HERCOLE Lab
 
-Welcome to the **H**uman-**E**xplainable, **R**obust, and **CO**llaborative **LE**arning (**HERCOLE**) Laboratory homepage!
+Explore our research in **H**uman-**E**xplainable, **R**obust, and **CO**llaborative **LE**arning (**HERCOLE**).
