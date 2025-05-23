@@ -4,24 +4,22 @@
 ## Docs: https://gohugo.io/hugo-modules/
 ############################
 
-module:
-  imports:
-    - path: github.com/HugoBlox/hugo-blox-builder/modules/blox-plugin-netlify
-    - path: github.com/HugoBlox/hugo-blox-builder/modules/blox-tailwind
-    - path: github.com/hugo-blox/hugo-blox-builder@v0.3.1
+imports:
+  - path: github.com/HugoBlox/hugo-blox-builder/modules/blox-plugin-netlify
+  - path: github.com/HugoBlox/hugo-blox-builder/modules/blox-tailwind
 
+# Install any Hugo Blox within the `hugo-blox/blox/` folder
 mounts:
-  # monta tutti i blox “community”
-  - source: modules/blox-tailwind/layouts/blox/community
-    target: layouts/blox/community
-    includeFiles: '**/*.html'
-
-  # monta tutti i blox “all-access”
-  - source: modules/blox-tailwind/layouts/blox/all-access
-    target: layouts/blox/all-access
-    includeFiles: '**/*.html'
-
-  # (opzionale) monta anche i CSS dei blox
-  - source: modules/blox-tailwind/assets/dist
-    target: assets/dist
-    includeFiles: '**/*.css'
+  - source: hugo-blox/blox/community
+    target: layouts/partials/blox/community/
+    includeFiles: '**.html'
+  - source: hugo-blox/blox/all-access
+    target: layouts/partials/blox/
+    includeFiles: '**.html'
+  - source: hugo-blox/blox
+    target: assets/dist/community/blox/
+    includeFiles: '**.css'
+  - source: layouts
+    target: layouts
+  - source: assets
+    target: assets
