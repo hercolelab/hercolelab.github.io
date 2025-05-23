@@ -10,25 +10,16 @@ design:
 
 sections:
 
-  - block: markdown
-    content: |
-      ## Welcome to HERCOLE Lab
-      <div style="text-align: center; margin: 2rem 0;">
-        <img src="/logo.png" alt="HERCOLE Lab Logo" style="width:160px; display:block; margin:0 auto;" />
-
-        <p style="margin-top: 1rem;">
-          <a href="mailto:hercolelab@di.uniroma1.it" title="Email" style="margin:0 0.5rem;">✉️</a>
-          <a href="https://x.com/HercoleLab" target="_blank" title="X" style="margin:0 0.5rem;">🐦</a>
-          <a href="https://github.com/hercolelab" target="_blank" title="GitHub" style="margin:0 0.5rem;">💻</a>
-        </p>
-      </div>
-
-      Explore our research in **Human-Explainable, Robust, and COllaborative LEarning**.
+  - block: resume-biography
+    content:
+      username: admin
+      text: ""
     design:
       css_class: dark
       background:
         color: black
         image:
+          # Add your image background to `assets/media/`.
           filename: background4.jpg
           filters:
             brightness: 1.0
