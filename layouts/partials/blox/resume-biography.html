@@ -46,6 +46,14 @@
       {{- $person_page.Title -}}
     {{- end -}}
   </div>
+
+  {{ with ($block.content.text | emojify | $page.RenderString) | default $person_page.Content }}
+  <div class="pt-2 d-flex justify-content-center prose prose-slate lg:prose-xl text-4xl dark:prose-invert">
+    <div class="bio-text" {{ with $block.design.biography.style }}{{ (printf "style=\"%s\"" .) | safe.HTMLAttr }}{{end}}>
+      {{ . }}
+    </div>
+  </div>
+  {{ end }}
   
   {{ if $avatar }}
 
