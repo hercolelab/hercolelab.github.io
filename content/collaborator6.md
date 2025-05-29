@@ -13,8 +13,6 @@ sections:
     content:
       username: collaborator6
       text: ""
-      
-    design:
-      css_class: dark
+
 
 ---

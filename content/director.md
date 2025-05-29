@@ -13,8 +13,5 @@ sections:
     content:
       username: director
       text: ""
-      
-    design:
-      css_class: dark
 
 ---

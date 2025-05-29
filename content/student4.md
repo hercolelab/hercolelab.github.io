@@ -13,8 +13,6 @@ sections:
     content:
       username: student4
       text: ""
-      
-    design:
-      css_class: dark
+
 
 ---
