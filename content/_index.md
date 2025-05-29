@@ -41,22 +41,12 @@ sections:
       username: director
       title: Lab Director
 
-  #- block: team
-  #  content:
-  #    # Titolo e descrizione del blocco (opzionali)
-  #    title: "Il Team"
-  #    text: "Ecco chi c’è dietro al progetto"
-  #    # Filtri: qui prendo solo i profili con tag "core"
-  #    filters:
-  #      tags: ["core"]
-  #    # Ordinamento e limiti
-  #    sort_by: "weight"
-  #    sort_ascending: false
-  #    offset: 0
-  #    count: 0
-  #  design:
-  #    view: "card"
-  #    columns: 3
+  - block: collaborators
+    content:
+      usernames:
+        - collaborator1
+        - collaborator2
+      title: Collaborators
 
   - block: collection
     id: team
