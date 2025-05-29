@@ -12,12 +12,9 @@
             {{- $logo.Content | safeHTML -}}
             {{ else }}
             {{ $logo_img := ($logo.Process "Resize x36 webp") }}
-            <img
-                fetchpriority="high"
-                decoding="async"
-                width="{{ $logo_img.Width }}"
-                height="{{ $logo_img.Height }}"
-                src="{{ $logo_img.RelPermalink }}"
+             <img
+                class="h-9"
+                src="/media/logo.png"
                 alt="{{ site.Title }}" />
             {{ end }}
         {{ else }}
