@@ -16,6 +16,7 @@
 {{ $person := $person_page.Params }}
 {{ $avatar := ($person_page.Resources.ByType "image").GetMatch "*avatar*" }}
 {{ $avatar_shape := site.Params.features.avatar.shape | default "circle" }}
+{{- $director := site.GetPage "page" "director.md" -}}
 
 {{ $img := "" }}
 {{with $block.design.banner.filename}}
@@ -46,22 +47,23 @@
   </div>
   {{ end }}
 
-  <div class="text-2xl font-bold mb-4 mt-2">
+<div class="text-2xl font-bold mb-4 mt-2">
   {{- if $person.name_pronunciation -}}
     <ruby>
       <rb>
-        <a href="{{ relref "director.md" . }}">
-        {{ $person_page.Title }}
+        <a href="{{ $director.RelPermalink }}">
+          {{ $person_page.Title }}
         </a>
       </rb>
       <rt>{{ $person.name_pronunciation }}</rt>
     </ruby>
   {{- else -}}
-    <a href="{{ relref "director.md" . }}">
-    {{ $person_page.Title }}
+    <a href="{{ $director.RelPermalink }}">
+      {{ $person_page.Title }}
     </a>
   {{- end -}}
 </div>
+
 
 
   {{ with $person.role }}<h3 class="font-semibold mb-4">{{ . | markdownify | emojify }}</h3>{{ end }}
