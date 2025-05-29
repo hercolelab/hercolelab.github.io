@@ -15,5 +15,7 @@ sections:
       text: ""
     design:
       css_class: dark
+      background:
+        color: black
 
 ---
