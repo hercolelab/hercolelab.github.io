@@ -50,7 +50,7 @@
       {{ $avatar := ($person_page.Resources.ByType "image").GetMatch "*avatar*" }}
       {{- $director := site.GetPage "page" "director.md" -}}
 
-      <div id="profile" class="resume-biography flex justify-center items-center flex-col dark:text-white">
+      <div id="profile" class="single-profile flex justify-center items-center flex-col dark:text-white">
         {{ if $avatar }}
           <div class="avatar-wrapper mb-2">
             {{ $avatar_image := $avatar.Fill "150x150 Center" }}
