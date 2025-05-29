@@ -44,15 +44,12 @@ profiles:
 education:
   - area: PhD in Computer Science
     institution: Ca' Foscari University of Venice, Italy
-    year: 2011
 
   - area: MSc in Computer Science
     institution: University of Pisa, Italy
-    year: 2005
   
   - area: BSc in Computer Science
     institution: University of Pisa, Italy
-    year: 2022
     
 ---
 
