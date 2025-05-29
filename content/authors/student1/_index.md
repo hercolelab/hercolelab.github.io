@@ -30,8 +30,6 @@ profiles:
     url: 'mailto:giorgi@di.uniroma1.it'
   - icon: home
     url: https://www.flaviogiorgi.com/about-me
-  - icon: brands/x
-    url: https://twitter.com/fpinell80
   - icon: brands/linkedin
     url: https://www.linkedin.com/in/flavio-giorgi-2683341b5/
   - icon: academicons/google-scholar
