@@ -53,7 +53,7 @@
   {{ range $index, $author := $query }}
     <div class="team-card p-6 rounded-2xl shadow-lg bg-white dark:bg-gray-800">
       {{/* Usa il tuo partial di biography per ogni autore */}}
-      {{ partial "blox/resume-biography-3" (dict
+      {{ partial "blox/resume-biography" (dict
           "wcBlock" (dict "content" (dict "username" $author.File.BaseFileName) "design" (dict "banner" (dict "filename" "") "avatar" (dict)))
           "wcPage" $author
       ) }}
