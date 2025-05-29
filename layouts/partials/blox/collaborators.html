@@ -56,7 +56,7 @@
         {{ if $avatar }}
           <div class="avatar-wrapper mb-2">
             {{ $avatar_image := $avatar.Fill "150x150 Center" }}
-            <a href="{{ $director.RelPermalink }}">
+            <a href="{{ $collaborator.RelPermalink }}">
               <img
                 class="avatar rounded-full bg-white dark:bg-gray-800 p-1"
                 src="{{ $avatar_image.RelPermalink }}"
@@ -75,8 +75,8 @@
             <ruby>
               <rb>
                 <a
-                  href="{{ $director.RelPermalink }}"
-                  class="text-blue-600 underline font-semibold hover:text-blue-800 hover:no-underline"
+                  href="{{ $collaborator.RelPermalink }}"
+                  class="text-blue-600 font-semibold hover:text-blue-800 hover:underline"
                 >
                   {{ $person_page.Title }}
                 </a>
@@ -85,8 +85,8 @@
             </ruby>
           {{- else -}}
             <a
-              href="{{ $director.RelPermalink }}"
-              class="text-blue-600 underline font-semibold hover:text-blue-800 hover:no-underline"
+              href="{{ $collaborator.RelPermalink }}"
+              class="text-blue-600 font-semibold hover:text-blue-800 hover:underline"
             >
               {{ $person_page.Title }}
             </a>
