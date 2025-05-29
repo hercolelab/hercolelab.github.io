@@ -9,10 +9,10 @@ main:
     weight: 1
   - name: Meet the Team
     url: /#team
-    weight: 3
+    weight: 2
   - name: Papers
-    url: /publication/
+    url: papers/
     weight: 4
   - name: News
     url: /#news
-    weight: 2
+    weight: 3
