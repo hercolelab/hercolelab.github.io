@@ -37,6 +37,33 @@ sections:
     design:
       columns: '1'
 
+  - block: director
+    id: team
+    content:
+      username: director
+      title: Lab Director
+
+  - block: students
+    content:
+      usernames:
+        - student1
+        - student2
+        - student3
+        - student4
+        - student5
+      title: PhD Students
+
+  - block: collaborators
+    content:
+      usernames:
+        - collaborator1
+        - collaborator2
+        - collaborator3
+        - collaborator4
+        - collaborator5
+        - collaborator6
+      title: External Collaborators
+
   - block: collection
     id: news
     content:
@@ -66,37 +93,6 @@ sections:
       # Reduce spacing
       spacing:
         padding: [0, 0, 0, 0]
-
-  - block: markdown
-    id: team
-    content:
-      title: 'Our Team'
-
-  - block: director
-    content:
-      username: director
-      title: Lab Director
-
-  - block: students
-    content:
-      usernames:
-        - student1
-        - student2
-        - student3
-        - student4
-        - student5
-      title: PhD Students
-
-  - block: collaborators
-    content:
-      usernames:
-        - collaborator1
-        - collaborator2
-        - collaborator3
-        - collaborator4
-        - collaborator5
-        - collaborator6
-      title: External Collaborators
 
   
 ---
