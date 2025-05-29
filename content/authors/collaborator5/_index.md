@@ -1,10 +1,10 @@
 ---
 
-title: Gabriele Tolomei
+title: Ziheng Chen
 
 # Full name (for SEO)
-first_name: Gabriele 
-last_name: Tolomei
+first_name: Ziheng 
+last_name: Chen
 
 # Status emoji
 status:
@@ -17,12 +17,11 @@ superuser: false
 highlight_name: false
 
 # Role/position/tagline
-role: Associate Professor of Computer Science
+role: Research Scientist
 
 # Organizations/Affiliations to display in Biography blox
 organizations:
-  - name: Sapienza Università di Roma
-    url: https://www.uniroma1.it/it/pagina-strutturale/home
+  - name: Walmart Labs, Sunnyvale, CA, USA
 
 # Social network links
 # Need to use another icon? Simply download the SVG icon to your `assets/media/icons/` folder.

@@ -1,10 +1,10 @@
 ---
 
-title: Gabriele Tolomei
+title: Fabrizio Silvestri
 
 # Full name (for SEO)
-first_name: Gabriele 
-last_name: Tolomei
+first_name: Fabrizio   
+last_name: Silvestri
 
 # Status emoji
 status:
@@ -17,7 +17,8 @@ superuser: false
 highlight_name: false
 
 # Role/position/tagline
-role: Associate Professor of Computer Science
+role: Full Professor of Computer Science
+
 
 # Organizations/Affiliations to display in Biography blox
 organizations:

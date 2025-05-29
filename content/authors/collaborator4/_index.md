@@ -1,10 +1,10 @@
 ---
 
-title: Gabriele Tolomei
+title: Giovanni Trappolini
 
 # Full name (for SEO)
-first_name: Gabriele 
-last_name: Tolomei
+first_name: Giovanni 
+last_name: Trappolini
 
 # Status emoji
 status:
@@ -17,7 +17,7 @@ superuser: false
 highlight_name: false
 
 # Role/position/tagline
-role: Associate Professor of Computer Science
+role: Assistant Professor of Computer Science
 
 # Organizations/Affiliations to display in Biography blox
 organizations:

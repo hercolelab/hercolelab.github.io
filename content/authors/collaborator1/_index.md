@@ -1,10 +1,10 @@
 ---
 
-title: Gabriele Tolomei
+title: Fabio Pinelli
 
 # Full name (for SEO)
-first_name: Gabriele 
-last_name: Tolomei
+first_name: Fabio 
+last_name: Pinelli
 
 # Status emoji
 status:
@@ -21,8 +21,7 @@ role: Associate Professor of Computer Science
 
 # Organizations/Affiliations to display in Biography blox
 organizations:
-  - name: Sapienza Università di Roma
-    url: https://www.uniroma1.it/it/pagina-strutturale/home
+  - name: IMT School for Advanced Studies Lucca
 
 # Social network links
 # Need to use another icon? Simply download the SVG icon to your `assets/media/icons/` folder.
