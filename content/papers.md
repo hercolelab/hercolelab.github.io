@@ -6,17 +6,19 @@ type: landing
 
 design:
   # Default section spacing
-  spacing: "6rem"
+  spacing: "10rem"
 
 sections:
 
   - block: collection
     content:
-      title: Recent Publications
+      title: Publications
       text: ""
       filters:
         folders:
           - publication
         exclude_featured: false
+    design:
+      view: citation
   
 ---
