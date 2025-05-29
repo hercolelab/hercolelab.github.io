@@ -38,7 +38,7 @@ sections:
 
   - block: resume-biography-3
     content:
-      username: lab_director
+      username: director
       text: ""
     design:
       css_class: dark
