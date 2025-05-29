@@ -1,79 +1,48 @@
-{{/* Hugo Blox: Team */}}
-{{/* Questo file va messo in layouts/partial/blox/team.html */}}
-{{/* License: https://github.com/HugoBlox/hugo-blox-builder/blob/main/LICENSE.md */}}
+{{/* layouts/blocks/team.html */}}
+{{ $page      := .wcPage }}
+{{ $block     := .wcBlock }}
+{{ $folder    := $block.content.folder | default "team" }}
+{{ $columns   := $block.design.columns | default 3 }}
+{{ $gap       := $block.design.gap | default "8" }}
 
-{{ $page    := .wcPage }}
-{{ $block   := .wcBlock }}
-{{ $view    := $block.design.view | default "card" }}
-{{ $columns := $block.design.columns | default "2" }}
-
-{{/* Prendo la sezione authors */}}
-{{ $authorsSection := site.GetPage "Section" "authors" }}
-{{ if not $authorsSection }}
-  {{ errorf "Sezione ‘authors’ non trovata: crea content/authors/ con i tuoi profili." }}
+{{/* Recupera la sezione indicata */}}
+{{ $section := site.GetPage "Section" $folder }}
+{{ if not $section }}
+  {{ errorf "Sezione ‘%s’ non trovata. Crea content/%s/ con i profili." $folder $folder }}
 {{ end }}
 
-{{/* Raccolgo tutte le pagine markdown sotto content/authors/ */}}
-{{ $query := $authorsSection.RegularPages }}
+{{/* Tutte le pagine markdown al livello immediato (una cartella = un profilo) */}}
+{{ $profiles := $section.RegularPages }}
 
-{{/* Filtra solo Kind “page” (esclude le pagine di lista/sezione) */}}
-{{ $query = where $query "Kind" "page" }}
-
-{{/* Applica eventuali filtri passati nel front-matter */}}
-{{ with $block.content.filters.username }}
-  {{ $query = where $query "File.BaseFileName" . }}
-{{ end }}
-{{ with $block.content.filters.tags }}
-  {{ $query = where $query "Params.tags" "intersect" . }}
-{{ end }}
-{{ with $block.content.filters.featured }}
-  {{ $query = where $query "Params.featured" . }}
+{{/* (Eventuali filtri personalizzati, se ti servono) */}}
+{{ with $block.content.filters }}
+  {{ if .tags }}    {{ $profiles = where $profiles "Params.tags" "intersect" .tags }}    {{ end }}
+  {{ if .featured }}{{ $profiles = where $profiles "Params.featured" .featured }}{{ end }}
 {{ end }}
 
-{{/* Ordinamento */}}
-{{ $sort_by        := $block.content.sort_by | default "Title" }}
-{{ $sort_parameter := partial "functions/get_sort_by_parameter" $sort_by }}
-{{ $sort_asc       := $block.content.sort_ascending | default false }}
-{{ $sort_order     := cond $sort_asc "asc" "desc" }}
-{{ $query          = sort $query $sort_parameter $sort_order }}
-
-{{/* Offset & limit */}}
-{{ $offset := $block.content.offset | default 0 }}
-{{ $count  := $block.content.count  | default 0 }}
-{{ if gt $count 0 }}
-  {{ if gt $offset 0 }}
-    {{ $query = first $count (after $offset $query) }}
-  {{ else }}
-    {{ $query = first $count $query }}
-  {{ end }}
-{{ end }}
-
-{{/* Titolo e descrizione del blocco */}}
-{{ with $block.content.title }}
-  <div class="text-center mb-6">
-    <h2 class="text-3xl font-bold">{{ . | emojify | $page.RenderString }}</h2>
-    {{ with $block.content.text }}
-      <p class="mt-2">{{ . | emojify | $page.RenderString }}</p>
-    {{ end }}
-  </div>
-{{ end }}
-
-<div class="grid grid-cols-1 md:grid-cols-{{ $columns }} gap-8 px-6">
-  {{ range $index, $author := $query }}
-    {{ with $author.File }}
-      {{ $username := .BaseFileName }}
-      <div class="team-card p-6 rounded-2xl shadow-lg bg-white dark:bg-gray-800">
-        {{ partial "blocks/resume-biography" (dict
-            "wcBlock" (dict
-              "content" (dict
-                "username"    $username
-                "text"        ($block.content.item_text | default "")
-              )
-              "design" $block.design
-            )
-            "wcPage" $author
-        ) }}
-      </div>
-    {{ end }}
+<div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-{{ $columns }} gap-{{ $gap }} px-6">
+  {{ range $profiles }}
+    <div class="flex flex-col items-center text-center p-6 bg-white dark:bg-gray-800 rounded-2xl shadow-lg">
+      {{ with .Params.avatar }}
+        <img src="{{ . | relURL }}" alt="{{ $.Title }}" class="w-32 h-32 rounded-full object-cover mb-4"/>
+      {{ end }}
+      <h3 class="text-xl font-semibold">{{ .Title }}</h3>
+      {{ with .Params.organization }}
+        <p class="text-sm text-gray-500">{{ . }}</p>
+      {{ end }}
+      {{ with .Params.role }}
+        <p class="mt-1 text-gray-700 dark:text-gray-300">{{ . }}</p>
+      {{ end }}
+      {{ with .Params.social }}
+        <div class="flex space-x-4 mt-3">
+          {{ range . }}
+            <a href="{{ .url }}" target="_blank" rel="noopener noreferrer" aria-label="{{ .name }}">
+              {{/* Assumiamo che .icon sia il nome di un’icona lucide-react o simile */}}
+              <i class="icon-{{ .icon }} w-6 h-6"></i>
+            </a>
+          {{ end }}
+        </div>
+      {{ end }}
+    </div>
   {{ end }}
 </div>
