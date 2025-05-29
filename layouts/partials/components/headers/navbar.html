@@ -57,7 +57,7 @@
     {{ $align_menu := site.Params.header.navbar.align | default "center" }}
     <ul
       id="nav-menu"
-      class="navbar-nav hidden lg:flex mx-auto space-x-50">
+      class="navbar-nav hidden lg:flex mx-auto space-x-8">
       {{ $currentPage := . }}
       {{ range site.Menus.main }}
       {{ $menuURL := .URL | absLangURL }}
