@@ -1,10 +1,38 @@
 <header id="site-header" class="header">
   <nav class="navbar px-3 flex justify-left">
+    <!-- Logo personalizzato a sinistra -->
     <div class="order-0 mr-4 flex items-center">
-      <a href="/" 
-       class="px-3 py-1 bg-blue-600 text-white rounded-md hover:bg-blue-700 transition">
-       HercoleLab
-      </a>
+    <a class="navbar-brand" href="{{ site.Home.RelPermalink }}" title="{{ site.Title }}">
+        {{- $logo_filename := site.Params.header.navbar.logo.filename -}}
+        {{ with $logo_filename }}
+        {{- $logo:= resources.Get (path.Join "media" $logo_filename) -}}
+        {{ with $logo }}
+            {{ $logoExt := path.Ext . }}
+            {{ if eq $logoExt `.svg` }}
+            {{- $logo.Content | safeHTML -}}
+            {{ else }}
+            {{ $logo_img := ($logo.Process "Resize x36 webp") }}
+            <img
+                fetchpriority="high"
+                decoding="async"
+                width="{{ $logo_img.Width }}"
+                height="{{ $logo_img.Height }}"
+                src="{{ $logo_img.RelPermalink }}"
+                alt="{{ site.Title }}" />
+            {{ end }}
+        {{ else }}
+            {{ warnf "Logo `%s` not found in `assets/media/` folder" $logo_filename }}
+        {{ end }}
+        {{ end }}
+        {{ with site.Params.header.navbar.logo.text }}{{ . }}{{ end }}
+    </a>
+    </div>
+    <!-- Pulsante HercoleLab in grassetto -->
+    <div class="order-0 mr-4 flex items-center">
+    <a href="/" 
+        class="px-3 py-1 bg-blue-600 text-black dark:text-white font-bold rounded-md hover:bg-blue-700 transition">
+        HercoleLab
+    </a>
     </div>
     <div class="order-0 h-100">
       <!-- Brand -->
