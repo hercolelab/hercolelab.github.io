@@ -37,6 +37,7 @@ sections:
       columns: '1'
 
   - block: director
+    id: team
     content:
       username: director
       title: Lab Director
@@ -51,18 +52,6 @@ sections:
         - collaborator5
         - collaborator6
       title: Collaborators
-
-  - block: collection
-    id: team
-    content:
-      title: Lab Director
-      filters:
-        folders:
-          - publication
-        featured_only: true
-    design:
-      view: article-grid
-      columns: 2
 
 
   - block: collection
