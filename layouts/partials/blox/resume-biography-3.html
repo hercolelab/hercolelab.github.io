@@ -18,7 +18,7 @@
 {{ $avatar_shape := site.Params.features.avatar.shape | default "circle" }}
 
 
-<div class="resume-biography px-3 flex flex-col md:flex-row justify-center gap-12">
+<div class="resume-biography px-3 flex flex-col md:flex-row text-black dark:text-white justify-center gap-12">
   <div class="flex-none m-w-[130px] mx-auto md:mx-0">
 
   {{ $img := "" }}
@@ -26,7 +26,7 @@
   {{- $img = resources.Get (path.Join "media" .) -}}
   {{ if $img }}
     {{- $img = $img.Process "webp" -}}
-    <div class="w-full text-black dark:text-white flex flex-wrap items-center justify-center">
+    <div class="w-full bg-gray-200 dark:bg-gray-900 flex flex-wrap items-center justify-center">
       <div class="w-full bg-white rounded dark:bg-gray-800">
         <div class="h-2/4 sm:h-64 overflow-hidden w-full">
           <img class="w-full object-cover"
@@ -44,13 +44,13 @@
 
     <div class="avatar-wrapper {{ if $img }}-mt-[105px]{{else}}mt-10{{end}}">
       {{ $avatar_image := $avatar.Fill "150x150 Center" }}
-      <img class="avatar rounded-full bg-white dark:bg-black p-1" src="{{ $avatar_image.RelPermalink }}" alt="{{$person_page.Title}}"
+      <img class="avatar rounded-full bg-white dark:bg-gray-800 p-1" src="{{ $avatar_image.RelPermalink }}" alt="{{$person_page.Title}}"
            width="{{ $avatar_image.Width }}" height="{{ $avatar_image.Height }}">
       {{with $person.status.icon}}<span class="avatar-emoji">{{.|emojify}}</span>{{end}}
     </div>
     {{ end }}
 
-    <div class="portrait-title text-black dark:text-white">
+    <div class="portrait-title dark:text-white">
 
       <div class="text-3xl font-bold mb-2 mt-6">
         {{- if $person.name_pronunciation -}}
@@ -74,7 +74,7 @@
       {{ end }}
     </div>
 
-    <ul class="network-icon dark:text-white">
+    <ul class="network-icon dark:text-zinc-100">
       {{ range $person.profiles }}
       {{ $pack := or .icon_pack "fas" }}
       {{ $pack_prefix := $pack }}
