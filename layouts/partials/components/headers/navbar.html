@@ -11,11 +11,13 @@
             {{ if eq $logoExt `.svg` }}
             {{- $logo.Content | safeHTML -}}
             {{ else }}
-            {{ $logo_img := ($logo.Process "Resize x36 webp") }}
-             <img
-                class="h-9"
-                src="/media/logo.png"
-                alt="{{ site.Title }}" />
+            {{ $resized := $logo.Resize "x36" }}
+            <img
+            width="{{ $resized.Width }}"
+            height="{{ $resized.Height }}"
+            src="{{ $resized.RelPermalink }}"
+            alt="{{ site.Title }}" />
+            
             {{ end }}
         {{ else }}
             {{ warnf "Logo `%s` not found in `assets/media/` folder" $logo_filename }}
