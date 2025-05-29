@@ -11,7 +11,7 @@ main:
     url: /#team
     weight: 3
   - name: Papers
-    url: /#papers
+    url: /publication/
     weight: 4
   - name: News
     url: /#news
