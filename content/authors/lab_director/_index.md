@@ -3,8 +3,8 @@
 title: Gabriele Tolomei
 
 # Full name (for SEO)
-first_name: HERCOLE
-last_name: Lab
+first_name: Gabriele 
+last_name: Tolomei
 
 # Status emoji
 status:
@@ -17,7 +17,7 @@ superuser: false
 highlight_name: false
 
 # Role/position/tagline
-role: 
+role: Associate Professor of Computer Science
 
 # Organizations/Affiliations to display in Biography blox
 organizations:
