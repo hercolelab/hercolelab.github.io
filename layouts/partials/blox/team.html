@@ -2,24 +2,33 @@
 {{/* Questo file va messo in layouts/partial/blox/team.html */}}
 {{/* License: https://github.com/HugoBlox/hugo-blox-builder/blob/main/LICENSE.md */}}
 
-{{/* Inizializzazione */}}
-{{ $page       := .wcPage }}
-{{ $block      := .wcBlock }}
-{{ $view       := $block.design.view | default "card" }}
-{{ $columns    := $block.design.columns | default "2" }}
+{{ $page    := .wcPage }}
+{{ $block   := .wcBlock }}
+{{ $view    := $block.design.view | default "card" }}
+{{ $columns := $block.design.columns | default "2" }}
 
-{{/* Query: prendi tutti i profili nella sezione "authors" */}}
+{{/* Prendo la sezione authors */}}
 {{ $authorsSection := site.GetPage "Section" "authors" }}
 {{ if not $authorsSection }}
-  {{ errorf "Non ho trovato la sezione ‘authors’. Assicurati di avere /content/authors/ con i tuoi profili." }}
+  {{ errorf "Sezione ‘authors’ non trovata: crea content/authors/ con i tuoi profili." }}
 {{ end }}
-{{ $query := $authorsSection.Pages }}
 
-{{/* Filtri opzionali (esempio: username, tags, ecc.) */}}
-{{ if $block.content.filters.username }}
-  {{ $query = where $query "File.BaseFileName" $block.content.filters.username }}
+{{/* Raccolgo tutte le pagine markdown sotto content/authors/ */}}
+{{ $query := $authorsSection.RegularPages }}
+
+{{/* Filtra solo Kind “page” (esclude le pagine di lista/sezione) */}}
+{{ $query = where $query "Kind" "page" }}
+
+{{/* Applica eventuali filtri passati nel front-matter */}}
+{{ with $block.content.filters.username }}
+  {{ $query = where $query "File.BaseFileName" . }}
 {{ end }}
-{{/* qui puoi aggiungere altri filtri analoghi a quelli di collection.html */}}
+{{ with $block.content.filters.tags }}
+  {{ $query = where $query "Params.tags" "intersect" . }}
+{{ end }}
+{{ with $block.content.filters.featured }}
+  {{ $query = where $query "Params.featured" . }}
+{{ end }}
 
 {{/* Ordinamento */}}
 {{ $sort_by        := $block.content.sort_by | default "Title" }}
@@ -30,7 +39,7 @@
 
 {{/* Offset & limit */}}
 {{ $offset := $block.content.offset | default 0 }}
-{{ $count  := $block.content.count | default 0 }}
+{{ $count  := $block.content.count  | default 0 }}
 {{ if gt $count 0 }}
   {{ if gt $offset 0 }}
     {{ $query = first $count (after $offset $query) }}
@@ -40,9 +49,9 @@
 {{ end }}
 
 {{/* Titolo e descrizione del blocco */}}
-{{ if $block.content.title }}
+{{ with $block.content.title }}
   <div class="text-center mb-6">
-    <h2 class="text-3xl font-bold">{{ $block.content.title | emojify | $page.RenderString }}</h2>
+    <h2 class="text-3xl font-bold">{{ . | emojify | $page.RenderString }}</h2>
     {{ with $block.content.text }}
       <p class="mt-2">{{ . | emojify | $page.RenderString }}</p>
     {{ end }}
@@ -51,12 +60,20 @@
 
 <div class="grid grid-cols-1 md:grid-cols-{{ $columns }} gap-8 px-6">
   {{ range $index, $author := $query }}
-    <div class="team-card p-6 rounded-2xl shadow-lg bg-white dark:bg-gray-800">
-      {{/* Usa il tuo partial di biography per ogni autore */}}
-      {{ partial "blox/resume-biography" (dict
-          "wcBlock" (dict "content" (dict "username" $author.File.BaseFileName) "design" (dict "banner" (dict "filename" "") "avatar" (dict)))
-          "wcPage" $author
-      ) }}
-    </div>
+    {{ with $author.File }}
+      {{ $username := .BaseFileName }}
+      <div class="team-card p-6 rounded-2xl shadow-lg bg-white dark:bg-gray-800">
+        {{ partial "blocks/resume-biography" (dict
+            "wcBlock" (dict
+              "content" (dict
+                "username"    $username
+                "text"        ($block.content.item_text | default "")
+              )
+              "design" $block.design
+            )
+            "wcPage" $author
+        ) }}
+      </div>
+    {{ end }}
   {{ end }}
 </div>
