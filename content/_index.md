@@ -36,6 +36,15 @@ sections:
     design:
       columns: '1'
 
+  - block: resume-biography-3
+    content:
+      username: lab_director
+      text: ""
+    design:
+      css_class: dark
+      background:
+        color: black
+
   - block: team
     content:
       # Titolo e descrizione del blocco (opzionali)
