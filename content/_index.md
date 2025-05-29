@@ -46,6 +46,10 @@ sections:
       usernames:
         - collaborator1
         - collaborator2
+        - collaborator3
+        - collaborator4
+        - collaborator5
+        - collaborator6
       title: Collaborators
 
   - block: collection
