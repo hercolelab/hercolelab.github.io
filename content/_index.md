@@ -42,6 +42,16 @@ sections:
       username: director
       title: Lab Director
 
+  - block: students
+    content:
+      usernames:
+        - student1
+        - student2
+        - student3
+        - student4
+        - student5
+      title: PhD Students
+
   - block: collaborators
     content:
       usernames:
@@ -51,7 +61,7 @@ sections:
         - collaborator4
         - collaborator5
         - collaborator6
-      title: Collaborators
+      title: External Collaborators
 
 
   - block: collection
