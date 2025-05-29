@@ -1,0 +1,62 @@
+{{/* Hugo Blox: Team */}}
+{{/* Questo file va messo in layouts/partial/blox/team.html */}}
+{{/* License: https://github.com/HugoBlox/hugo-blox-builder/blob/main/LICENSE.md */}}
+
+{{/* Inizializzazione */}}
+{{ $page       := .wcPage }}
+{{ $block      := .wcBlock }}
+{{ $view       := $block.design.view | default "card" }}
+{{ $columns    := $block.design.columns | default "2" }}
+
+{{/* Query: prendi tutti i profili nella sezione "authors" */}}
+{{ $authorsSection := site.GetPage "Section" "authors" }}
+{{ if not $authorsSection }}
+  {{ errorf "Non ho trovato la sezione ‘authors’. Assicurati di avere /content/authors/ con i tuoi profili." }}
+{{ end }}
+{{ $query := $authorsSection.Pages }}
+
+{{/* Filtri opzionali (esempio: username, tags, ecc.) */}}
+{{ if $block.content.filters.username }}
+  {{ $query = where $query "File.BaseFileName" $block.content.filters.username }}
+{{ end }}
+{{/* qui puoi aggiungere altri filtri analoghi a quelli di collection.html */}}
+
+{{/* Ordinamento */}}
+{{ $sort_by        := $block.content.sort_by | default "Title" }}
+{{ $sort_parameter := partial "functions/get_sort_by_parameter" $sort_by }}
+{{ $sort_asc       := $block.content.sort_ascending | default false }}
+{{ $sort_order     := cond $sort_asc "asc" "desc" }}
+{{ $query          = sort $query $sort_parameter $sort_order }}
+
+{{/* Offset & limit */}}
+{{ $offset := $block.content.offset | default 0 }}
+{{ $count  := $block.content.count | default 0 }}
+{{ if gt $count 0 }}
+  {{ if gt $offset 0 }}
+    {{ $query = first $count (after $offset $query) }}
+  {{ else }}
+    {{ $query = first $count $query }}
+  {{ end }}
+{{ end }}
+
+{{/* Titolo e descrizione del blocco */}}
+{{ if $block.content.title }}
+  <div class="text-center mb-6">
+    <h2 class="text-3xl font-bold">{{ $block.content.title | emojify | $page.RenderString }}</h2>
+    {{ with $block.content.text }}
+      <p class="mt-2">{{ . | emojify | $page.RenderString }}</p>
+    {{ end }}
+  </div>
+{{ end }}
+
+<div class="grid grid-cols-1 md:grid-cols-{{ $columns }} gap-8 px-6">
+  {{ range $index, $author := $query }}
+    <div class="team-card p-6 rounded-2xl shadow-lg bg-white dark:bg-gray-800">
+      {{/* Usa il tuo partial di biography per ogni autore */}}
+      {{ partial "blocks/resume-biography" (dict
+          "wcBlock" (dict "content" (dict "username" $author.File.BaseFileName) "design" (dict "banner" (dict "filename" "") "avatar" (dict)))
+          "wcPage" $author
+      ) }}
+    </div>
+  {{ end }}
+</div>

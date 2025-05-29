@@ -29,12 +29,43 @@ sections:
 
   - block: markdown
     content:
-      title: 'Our Research Mission'
+      title: 'About us'
       subtitle: ''
       text: |-
         The research mission of the HERCOLE Lab is to make next-generation ML and AI systems more **understandable** to humans, **resilient** to adversarial attacks, and **decentralized** to edge devices.
     design:
       columns: '1'
+
+  - block: team
+    content:
+      # Titolo e descrizione del blocco (opzionali)
+      title: "Il Team"
+      text: "Ecco chi c’è dietro al progetto"
+      # Filtri: qui prendo solo i profili con tag "core"
+      filters:
+        tags: ["core"]
+      # Ordinamento e limiti
+      sort_by: "weight"
+      sort_ascending: false
+      offset: 0
+      count: 0
+    design:
+      view: "card"
+      columns: 3
+
+  - block: collection
+    id: team
+    content:
+      title: Lab Director
+      filters:
+        folders:
+          - publication
+        featured_only: true
+    design:
+      view: article-grid
+      columns: 2
+
+
   - block: collection
     id: papers
     content:
