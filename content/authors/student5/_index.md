@@ -28,15 +28,17 @@ organizations:
 # Need to use another icon? Simply download the SVG icon to your `assets/media/icons/` folder.
 profiles:
   - icon: at-symbol
-    url: 'mailto:fabio.pinelli@imtlucca.it'
+    url: 'mailto:m.silvestri@uniroma1.it'
+  - icon: home
+    url: https://msilver22.github.io/
   - icon: brands/x
-    url: https://twitter.com/fpinell80
+    url: https://twitter.com/Silver22_2k
   - icon: brands/linkedin
-    url: https://www.linkedin.com/in/fabio-pinelli-3032008/
+    url: https://www.linkedin.com/in/matteo-silvestri-22-peedmat/
   - icon: academicons/google-scholar
-    url: https://scholar.google.it/citations?user=rfqxMS0AAAAJ&hl=it
+    url: https://scholar.google.com/citations?user=ET07P-kAAAAJ
   - icon: brands/github
-    url: https://github.com/fpinell
+    url: https://github.com/msilver22
 
 interests:
   - Artificial Intelligence

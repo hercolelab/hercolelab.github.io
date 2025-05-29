@@ -28,15 +28,15 @@ organizations:
 # Need to use another icon? Simply download the SVG icon to your `assets/media/icons/` folder.
 profiles:
   - icon: at-symbol
-    url: 'mailto:fabio.pinelli@imtlucca.it'
+    url: 'mailto:edoardo.gabrielli@uniroma1.it'
   - icon: brands/x
-    url: https://twitter.com/fpinell80
+    url: https://x.com/edogab_acc
   - icon: brands/linkedin
-    url: https://www.linkedin.com/in/fabio-pinelli-3032008/
+    url: https://www.linkedin.com/in/edoardog
   - icon: academicons/google-scholar
-    url: https://scholar.google.it/citations?user=rfqxMS0AAAAJ&hl=it
+    url: https://scholar.google.com/citations?user=b3bePdYAAAAJ&hl=en
   - icon: brands/github
-    url: https://github.com/fpinell
+    url: https://github.com/edogab33
 
 interests:
   - Artificial Intelligence

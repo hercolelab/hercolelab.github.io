@@ -27,53 +27,32 @@ organizations:
 # Need to use another icon? Simply download the SVG icon to your `assets/media/icons/` folder.
 profiles:
   - icon: at-symbol
-    url: 'mailto:fabio.pinelli@imtlucca.it'
+    url: 'mailto:giorgi@di.uniroma1.it'
+  - icon: home
+    url: https://www.flaviogiorgi.com/about-me
   - icon: brands/x
     url: https://twitter.com/fpinell80
   - icon: brands/linkedin
-    url: https://www.linkedin.com/in/fabio-pinelli-3032008/
+    url: https://www.linkedin.com/in/flavio-giorgi-2683341b5/
   - icon: academicons/google-scholar
-    url: https://scholar.google.it/citations?user=rfqxMS0AAAAJ&hl=it
+    url: https://scholar.google.com/citations?user=5dFQkoMAAAAJ&hl=it
   - icon: brands/github
-    url: https://github.com/fpinell
+    url: https://github.com/flaat
 
-interests:
-  - Artificial Intelligence
-  - Computational Linguistics
-  - Information Retrieval
 
 education:
-  - area: PhD Artificial Intelligence
-    institution: Stanford University
-    date_start: 2016-01-01
-    date_end: 2020-12-31
-    summary: |
-      Thesis on _Why LLMs are awesome_. Supervised by [Prof Joe Smith](https://example.com). Presented papers at 5 IEEE conferences with the contributions being published in 2 Springer journals.
-    button:
-      text: 'Read Thesis'
-      url: 'https://example.com'
-  - area: MEng Artificial Intelligence
-    institution: Massachusetts Institute of Technology
-    date_start: 2016-01-01
-    date_end: 2020-12-31
-    summary: |
-      GPA: 3.8/4.0
+  education:
+  - area: PhD in Computer Science
+    institution: Ca' Foscari University of Venice, Italy
+    date: 2011
 
-      Courses included:
-      - lorem ipsum dolor sit amet, consectetur adipiscing elit
-      - lorem ipsum dolor sit amet, consectetur adipiscing elit
-      - lorem ipsum dolor sit amet, consectetur adipiscing elit
-  - area: BSc Artificial Intelligence
-    institution: Massachusetts Institute of Technology
-    date_start: 2016-01-01
-    date_end: 2020-12-31
-    summary: |
-      GPA: 3.4/4.0
-      
-      Courses included:
-      - lorem ipsum dolor sit amet, consectetur adipiscing elit
-      - lorem ipsum dolor sit amet, consectetur adipiscing elit
-      - lorem ipsum dolor sit amet, consectetur adipiscing elit
+  - area: MSc in Computer Science
+    institution: University of Pisa, Italy
+    date: 2005
+  
+  - area: BSc in Computer Science
+    institution: University of Pisa, Italy
+    date: 2022
 work:
   - position: Director of Cloud Infrastructure
     company_name: GenCoin
