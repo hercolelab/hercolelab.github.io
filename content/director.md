@@ -12,8 +12,8 @@ sections:
   - block: resume-biography-3
     content:
       username: director
-      title: Lad Director
-
+      text: ""
+      
     design:
       css_class: dark
 

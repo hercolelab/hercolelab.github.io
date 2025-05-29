@@ -92,10 +92,10 @@
 
 
 
-  {{ with $person.role }}<h3 class="font-semibold mt-2 mb-2">{{ . | markdownify | emojify }}</h3>{{ end }}
+  {{ with $person.role }}<h3 class="font-semibold mb-2">{{ . | markdownify | emojify }}</h3>{{ end }}
 
   {{ range $person.organizations }}
-  <div class="mt-2 mb-2">
+  <div class="mb-2">
     {{ with .url }}<a href="{{ . }}" target="_blank" rel="noopener">{{ end }}
     <div>{{ .name }}</div>
     {{ if .url }}</a>{{ end }}

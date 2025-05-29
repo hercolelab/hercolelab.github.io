@@ -39,7 +39,7 @@ sections:
   - block: director
     content:
       username: director
-      text: ""
+      title: Lab Director
 
   #- block: team
   #  content:
