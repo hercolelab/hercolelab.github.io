@@ -4,15 +4,15 @@
   #   The weight parameter defines the order that the links will appear in.
 
 main:
-  - name: home
+  - name: Home
     url: /#home
-    weight: 0
+    weight: 1
   - name: Meet the Team
     url: /#team
-    weight: 2
+    weight: 3
   - name: Papers
     url: /#papers
-    weight: 3
+    weight: 4
   - name: News
     url: /#news
-    weight: 1
+    weight: 2
