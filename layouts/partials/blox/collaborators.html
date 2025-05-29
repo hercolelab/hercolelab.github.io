@@ -38,7 +38,10 @@
 
 {{/* Grid for multiple authors */}}
 {{ if gt (len $usernames) 0 }}
-  <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3 px-3 md:px-0">
+  <div
+    class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 px-4 md:px-0"
+    style="gap: 4px !important; padding-left:4px !important; padding-right:4px !important;"
+  >
     {{ range $author := $usernames }}
       {{/* Load each author page */}}
       {{ $person_page_path := printf "/authors/%s" $author }}
