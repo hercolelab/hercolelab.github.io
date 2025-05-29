@@ -36,14 +36,12 @@ sections:
     design:
       columns: '1'
 
-  - block: resume-biography-3
+  - block: resume-biography
     content:
       username: director
       text: ""
     design:
       css_class: dark
-      background:
-        color: black
 
   #- block: team
   #  content:
