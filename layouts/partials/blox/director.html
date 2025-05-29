@@ -41,25 +41,40 @@
   {{ if $avatar }}
   <div class="avatar-wrapper mb-2">
     {{ $avatar_image := $avatar.Fill "150x150 Center" }}
-    <img class="avatar rounded-full bg-white dark:bg-gray-800 p-1" src="{{ $avatar_image.RelPermalink }}" alt="{{$person_page.Title}}"
-         width="{{ $avatar_image.Width }}" height="{{ $avatar_image.Height }}">
-    {{with $person.status.icon}}<span class="avatar-emoji">{{.|emojify}}</span>{{end}}
+    <a href="{{ $director.RelPermalink }}">
+      <img
+        class="avatar rounded-full bg-white dark:bg-gray-800 p-1"
+        src="{{ $avatar_image.RelPermalink }}"
+        alt="{{ $person_page.Title }}"
+        width="{{ $avatar_image.Width }}"
+        height="{{ $avatar_image.Height }}"
+      >
+    </a>
+    {{ with $person.status.icon }}
+      <span class="avatar-emoji">{{ . | emojify }}</span>
+    {{ end }}
   </div>
-  {{ end }}
+{{ end }}
 
 <div class="text-2xl font-bold mb-4 mt-2">
   {{- if $person.name_pronunciation -}}
     <ruby>
       <rb>
-        <a href="{{ $director.RelPermalink }}">
-          {{ $person_page.Title }}
+        <a
+        href="{{ $director.RelPermalink }}"
+        class="text-blue-600 underline font-semibold hover:text-blue-800 hover:no-underline"
+        >
+        {{ $person_page.Title }}
         </a>
       </rb>
       <rt>{{ $person.name_pronunciation }}</rt>
     </ruby>
   {{- else -}}
-    <a href="{{ $director.RelPermalink }}">
-      {{ $person_page.Title }}
+    <a
+    href="{{ $director.RelPermalink }}"
+    class="text-blue-600 underline font-semibold hover:text-blue-800 hover:no-underline"
+    >
+    {{ $person_page.Title }}
     </a>
   {{- end -}}
 </div>
