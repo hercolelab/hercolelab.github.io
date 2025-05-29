@@ -41,7 +41,6 @@ profiles:
 
 
 education:
-  education:
   - area: PhD in Computer Science
     institution: Ca' Foscari University of Venice, Italy
 
@@ -50,7 +49,7 @@ education:
   
   - area: BSc in Computer Science
     institution: University of Pisa, Italy
-    
+
 work:
   - position: Director of Cloud Infrastructure
     company_name: GenCoin
