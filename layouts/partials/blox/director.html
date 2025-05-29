@@ -50,15 +50,15 @@
   {{- if $person.name_pronunciation -}}
     <ruby>
       <rb>
-        <a href="{{ relref "director.md" }}">
-          {{ $person_page.Title }}
+        <a href="{{ relref "director.md" . }}">
+        {{ $person_page.Title }}
         </a>
       </rb>
       <rt>{{ $person.name_pronunciation }}</rt>
     </ruby>
   {{- else -}}
-    <a href="{{ relref "director.md" }}">
-      {{ $person_page.Title }}
+    <a href="{{ relref "director.md" . }}">
+    {{ $person_page.Title }}
     </a>
   {{- end -}}
 </div>
