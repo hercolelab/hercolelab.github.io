@@ -38,7 +38,7 @@
 
 {{/* Grid for multiple authors */}}
 {{ if gt (len $usernames) 0 }}
-  <div class="grid grid-cols-1 sm:grid-cols-3 lg:grid-cols-6 gap-x-1 gap-y-10 px-10">
+  <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-4 p-4">
     {{ range $idx, $author := $usernames }}
       {{/* Load each author page */}}
       {{ $person_page_path := printf "/authors/%s" $author }}
@@ -52,7 +52,7 @@
       {{ $path := printf "collaborator%d.md" $n }}
       {{- $collaborator := site.GetPage "page" $path -}}
 
-      <div id="profile" class="resume-biography flex justify-center items-center flex-col dark:text-white">
+      <div class="resume-biography flex justify-center items-center flex-col dark:text-white">
         {{ if $avatar }}
           <div class="avatar-wrapper mb-2">
             {{ $avatar_image := $avatar.Fill "150x150 Center" }}
