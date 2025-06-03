@@ -42,8 +42,8 @@ education:
   - area: PhD in Data Science
     institution: Sapienza University of Rome, Italy
     year: 2022
-    
-  - area: MSc in data Science
+
+  - area: MSc in Data Science
     institution: Sapienza University of Rome, Italy
     year: 2018
   
