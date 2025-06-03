@@ -39,14 +39,17 @@ profiles:
 
 
 education:
-  - area: PhD in Computer Science
+  - area: PhD in Computer Science (XXXVIII Cycle)
     institution: Ca' Foscari University of Venice, Italy
+    year: 2025 (expected)
 
   - area: MSc in Computer Science
-    institution: University of Pisa, Italy
+    institution: Sapienza University of Rome, Italy
+    year: 2022
   
   - area: BSc in Computer Science
-    institution: University of Pisa, Italy
+    institution: Sapienza University of Rome, Italy
+    year: 2019
 
 work:
   - position: Director of Cloud Infrastructure
