@@ -44,13 +44,15 @@ profiles:
 education:
   - area: PhD in Computer Science
     institution: Ca' Foscari University of Venice, Italy
+    date_end: 2011
 
   - area: MSc in Computer Science
     institution: University of Pisa, Italy
+    date_end: 2005
   
   - area: BSc in Computer Science
     institution: University of Pisa, Italy
-    
+    date_end: 2002
 ---
 
 My current research interests are in the area of Human-Explainable, Robust, and COllaborative LEarning. In addition, I am also fascinated by topics related to Web Search and Mining and Computational Advertising.
