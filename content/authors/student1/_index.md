@@ -40,7 +40,7 @@ profiles:
 
 education:
   - area: PhD in Computer Science (XXXVIII Cycle)
-    institution: Ca' Foscari University of Venice, Italy
+    institution: Sapienza University of Rome, Italy
     year: 2025 (expected)
 
   - area: MSc in Computer Science
