@@ -17,7 +17,7 @@ superuser: false
 highlight_name: false
 
 # Role/position/tagline
-role: Research Fellow
+role: Postdoctoral researcher
 # Organizations/Affiliations to display in Biography blox
 organizations:
   - name: Sapienza Università di Roma
