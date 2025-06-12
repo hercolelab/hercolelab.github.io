@@ -22,11 +22,11 @@
     {{ $align_menu := site.Params.header.navbar.align | default "center" }}
     <ul
       id="nav-menu"
-      class="hidden lg:flex items-center space-x-6">
+      class="hidden lg:flex lg:ml-10 items-center space-x-6">
       {{ $currentPage := . }}
 
       <!-- HercoleLab manual button -->
-      <li class="nav-item mr-32">
+      <li class="nav-item">
         <a href="/" class="nav-link font-extrabold text-2xl tracking-widest text-primary-500 hover:text-primary-700 transition duration-150">HERCOLELab</a>
       </li>
 
