@@ -4,7 +4,7 @@
   #   The weight parameter defines the order that the links will appear in.
 
 main:
-  - name_html: '<span class="text-2xl font-bold tracking-wide">HercoleLab</span>'
+  - name: HercoleLab
     url: /
     weight: 1
   - name: About us
