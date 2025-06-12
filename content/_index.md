@@ -29,6 +29,7 @@ sections:
           parallax: false
 
   - block: markdown
+    id: aboutus
     content:
       title: 'About us'
       subtitle: ''
