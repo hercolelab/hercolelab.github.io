@@ -4,15 +4,19 @@
   #   The weight parameter defines the order that the links will appear in.
 
 main:
+  - name: '<span class="text-2xl font-bold tracking-wide">HercoleLab</span>'
+    url: /
+    weight: 0
   - name: About us
     url: /#aboutus
     weight: 1
   - name: Meet the Team
     url: /#team
     weight: 2
-  - name: Papers
-    url: papers/
-    weight: 4
   - name: News
     url: /#news
     weight: 3
+  - name: Papers
+    url: papers/
+    weight: 4
+
