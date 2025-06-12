@@ -1,5 +1,5 @@
 <header id="site-header" class="header">
-  <nav class="flex items-center justify-between px-6 w-full relative">
+  <nav class="flex items-center justify-between px-6 w-full">
 
     <!-- Mobile menu -->
     <input id="nav-toggle" type="checkbox" class="hidden" />
@@ -20,95 +20,93 @@
 
     <!-- Main menu -->
     {{ $align_menu := site.Params.header.navbar.align | default "center" }}
-    <div class="absolute left-1/2 transform -translate-x-[40%]">
-      <ul
-        id="nav-menu"
-        class="hidden lg:flex items-center space-x-6">
-        {{ $currentPage := . }}
+    <ul
+      id="nav-menu"
+      class="hidden lg:flex items-center space-x-6">
+      {{ $currentPage := . }}
 
-        <!-- HercoleLab manual button -->
-        <li class="nav-item mr-2">
-          <a href="/" class="nav-link font-extrabold text-2xl tracking-widest text-primary-500 hover:text-primary-700 transition duration-150">HERCOLELab</a>
-        </li>
+      <!-- HercoleLab manual button -->
+      <li class="nav-item mr-2">
+        <a href="/" class="nav-link font-extrabold text-2xl tracking-widest text-primary-500 hover:text-primary-700 transition duration-150">HERCOLELab</a>
+      </li>
 
-        {{ range site.Menus.main }}
-        {{ $menuURL := .URL | absLangURL }}
-        {{ $pageURL:= $currentPage.Permalink | absLangURL }}
-        {{ $active := eq $menuURL $pageURL }}
-        {{ if .HasChildren }}
-        <li class="nav-item nav-dropdown group relative">
-              <span
-                class="nav-link {{ range .Children }}
-                  {{ $childURL := .URL | absLangURL }}
-                  {{ $active := eq $childURL $pageURL }}
-                  {{ if $active }}active{{ end }}
-                {{ end }} inline-flex items-center">
-                {{ .Name }}
-                <svg class="h-4 w-4 fill-current inline-block" viewBox="0 0 20 20">
-                  <path
-                    d="M9.293 12.95l.707.707L15.657 8l-1.414-1.414L10 10.828 5.757 6.586 4.343 8z" />
-                </svg>
-              </span>
-          <ul
-            class="nav-dropdown-list lg:group-hover:visible lg:group-hover:opacity-100">
-            {{ range .Children }}
-            {{ $childURL := .URL | absLangURL }}
-            {{ $active := eq $childURL $pageURL }}
-            {{ $url := "" }}
-            {{- if findRE `^#` .URL -}}
-              {{- if not $.IsHome -}}
-                {{- $url = site.Home.RelPermalink -}}
-              {{- end }}
-              {{- $url = .URL -}}
-            {{- else -}}
-              {{- $url = .URL | relLangURL -}}
-            {{- end -}}
-            <li class="nav-dropdown-item">
-              <a
-                class="nav-dropdown-link {{ if $active }}active{{- end -}}"
-                {{ if findRE `^http` .URL }}
-                target="_blank" rel="noopener"
-                {{ end }}
-                href="{{$url}}">
-                {{ .Name }}
-              </a>
-            </li>
-            {{ end }}
-          </ul>
-        </li>
-        {{ else }}
-        {{ $url := "" }}
-        {{- if findRE `^#` .URL -}}
-          {{- if not $.IsHome -}}
-            {{- $url = site.Home.RelPermalink -}}
-          {{- end }}
-          {{- $url = .URL -}}
+      {{ range site.Menus.main }}
+      {{ $menuURL := .URL | absLangURL }}
+      {{ $pageURL:= $currentPage.Permalink | absLangURL }}
+      {{ $active := eq $menuURL $pageURL }}
+      {{ if .HasChildren }}
+      <li class="nav-item nav-dropdown group relative">
+            <span
+              class="nav-link {{ range .Children }}
+                {{ $childURL := .URL | absLangURL }}
+                {{ $active := eq $childURL $pageURL }}
+                {{ if $active }}active{{ end }}
+              {{ end }} inline-flex items-center">
+              {{ .Name }}
+              <svg class="h-4 w-4 fill-current inline-block" viewBox="0 0 20 20">
+                <path
+                  d="M9.293 12.95l.707.707L15.657 8l-1.414-1.414L10 10.828 5.757 6.586 4.343 8z" />
+              </svg>
+            </span>
+        <ul
+          class="nav-dropdown-list lg:group-hover:visible lg:group-hover:opacity-100">
+          {{ range .Children }}
+          {{ $childURL := .URL | absLangURL }}
+          {{ $active := eq $childURL $pageURL }}
+          {{ $url := "" }}
+          {{- if findRE `^#` .URL -}}
+            {{- if not $.IsHome -}}
+              {{- $url = site.Home.RelPermalink -}}
+            {{- end }}
+            {{- $url = .URL -}}
           {{- else -}}
-          {{- $url = .URL | relLangURL -}}
-        {{- end -}}
-        <li class="nav-item">
-          <a
-            class="nav-link {{ if $active }}active{{- end -}}"
-            {{ if findRE `^http` .URL }}
-            target="_blank" rel="noopener"
-            {{ end }}
-            href="{{$url}}"
-          >{{ .Name }}</a
-          >
-        </li>
-        {{ end }}
-        {{ end }}
-        {{ if site.Params.header.navbar.button.enable }}
-        <li class="mt-4 inline-block lg:hidden">
-          <a
-            class=""
-            href="{{ site.Params.header.navbar.button.url | relLangURL }}">
-            {{ site.Params.header.navbar.button.text }}
-          </a>
-        </li>
-        {{ end }}
-      </ul>
-    </div>
+            {{- $url = .URL | relLangURL -}}
+          {{- end -}}
+          <li class="nav-dropdown-item">
+            <a
+              class="nav-dropdown-link {{ if $active }}active{{- end -}}"
+              {{ if findRE `^http` .URL }}
+              target="_blank" rel="noopener"
+              {{ end }}
+              href="{{$url}}">
+              {{ .Name }}
+            </a>
+          </li>
+          {{ end }}
+        </ul>
+      </li>
+      {{ else }}
+      {{ $url := "" }}
+      {{- if findRE `^#` .URL -}}
+        {{- if not $.IsHome -}}
+          {{- $url = site.Home.RelPermalink -}}
+        {{- end }}
+        {{- $url = .URL -}}
+        {{- else -}}
+        {{- $url = .URL | relLangURL -}}
+      {{- end -}}
+      <li class="nav-item">
+        <a
+          class="nav-link {{ if $active }}active{{- end -}}"
+          {{ if findRE `^http` .URL }}
+          target="_blank" rel="noopener"
+          {{ end }}
+          href="{{$url}}"
+        >{{ .Name }}</a
+        >
+      </li>
+      {{ end }}
+      {{ end }}
+      {{ if site.Params.header.navbar.button.enable }}
+      <li class="mt-4 inline-block lg:hidden">
+        <a
+          class=""
+          href="{{ site.Params.header.navbar.button.url | relLangURL }}">
+          {{ site.Params.header.navbar.button.text }}
+        </a>
+      </li>
+      {{ end }}
+    </ul>
 
     <div class="order-1 ml-auto flex items-center md:order-2 lg:ml-0">
 
