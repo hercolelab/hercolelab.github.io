@@ -16,7 +16,6 @@
           transform="rotate(45 10 10)"></polygon>
       </svg>
     </label>
-    <!-- /Mobile menu -->
 
     <!-- Main menu -->
     {{ $align_menu := site.Params.header.navbar.align | default "center" }}
@@ -24,6 +23,12 @@
       id="nav-menu"
       class="navbar-nav hidden lg:flex mx-auto space-x-8">
       {{ $currentPage := . }}
+
+      <!-- HercoleLab manual button -->
+      <li class="nav-item">
+        <a href="/" class="nav-link font-bold text-xl tracking-wide">HercoleLab</a>
+      </li>
+      
       {{ range site.Menus.main }}
       {{ $menuURL := .URL | absLangURL }}
       {{ $pageURL:= $currentPage.Permalink | absLangURL }}
