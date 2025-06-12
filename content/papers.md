@@ -14,6 +14,7 @@ sections:
     content:
       title: Publications
       text: ""
+      count: 65535
       filters:
         folders:
           - publication
