@@ -118,7 +118,7 @@
 
     </select>
 
-    <!-- Date Filter -->
+    <!-- Date Filter 
     <select id="dateFilter"
             class="px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 dark:bg-gray-800 dark:text-white dark:border-gray-600">
       <option value="">All Years</option>
@@ -134,6 +134,7 @@
         <option value="{{ . }}">{{ . }}</option>
       {{ end }}
     </select>
+    TO DO-->
   </div>
 
   {{ range $index, $item := $query }}
@@ -186,7 +187,7 @@
 document.addEventListener('DOMContentLoaded', function () {
   const searchInput = document.getElementById('searchInput');
   const typeFilter = document.getElementById('typeFilter');
-  const dateFilter = document.getElementById('dateFilter');
+  /*const dateFilter = document.getElementById('dateFilter');*/
   const items = Array.from(document.querySelectorAll('.view-citation'));
 
   function normalize(text) {
@@ -196,7 +197,7 @@ document.addEventListener('DOMContentLoaded', function () {
   function applyFilters() {
     const query = normalize(searchInput?.value);
     const type = normalize(typeFilter?.value);
-    const year = dateFilter.value;
+    /*const year = dateFilter.value;*/
 
 
     items.forEach(item => {
@@ -206,15 +207,16 @@ document.addEventListener('DOMContentLoaded', function () {
 
       const matchesSearch = (title + ' ' + authors).includes(query);
       const matchesType = type ? itemType === type : true;
-      const matchesYear = year ? text.match(/\b\d{4}\b/)?.[0] === year : true;
+      /*const matchesYear = year ? text.match(/\b\d{4}\b/)?.[0] === year : true;*/
 
-      item.style.display = matchesSearch && matchesType && matchesYear ? '' : 'none';
+      /*item.style.display = matchesSearch && matchesType && matchesYear ? '' : 'none';*/
+      item.style.display = matchesSearch && matchesType ? '' : 'none';
     });
   }
 
   searchInput?.addEventListener('input', applyFilters);
   typeFilter?.addEventListener('change', applyFilters);
-  dateFilter?.addEventListener('change', applyFilters);
+  /*dateFilter?.addEventListener('change', applyFilters);*/
 });
 </script>
 
