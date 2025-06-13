@@ -3,7 +3,7 @@
 
 <div class="pub-list-item view-citation item"
      data-title="{{ .item.Title | lower }}"
-     data-type="{{ index .item.publication_types 0 | lower }}"
+     data-type="{{ index .item.Params.publication_types 0 | lower }}"
      style="margin-bottom: 1rem">
   <i class="far fa-file-alt pub-icon" aria-hidden="true"></i>
 
