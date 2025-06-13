@@ -155,15 +155,20 @@
 
 
 <script>
-  document.getElementById('searchInput').addEventListener('input', function (e) {
-    const filter = e.target.value.toLowerCase();
-    document.querySelectorAll('.item').forEach(function (el) {
-      const title = el.getAttribute('data-title');
-      if (title.includes(filter)) {
-        el.style.display = '';
-      } else {
-        el.style.display = 'none';
-      }
+  document.addEventListener('DOMContentLoaded', function () {
+    const searchInput = document.getElementById('searchInput');
+    if (!searchInput) return;
+
+    searchInput.addEventListener('input', function (e) {
+      const filter = e.target.value.toLowerCase();
+      document.querySelectorAll('.item').forEach(function (el) {
+        const title = el.getAttribute('data-title');
+        if (title && title.includes(filter)) {
+          el.style.display = '';
+        } else {
+          el.style.display = 'none';
+        }
+      });
     });
   });
 </script>
