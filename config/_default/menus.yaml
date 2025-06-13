@@ -13,7 +13,7 @@ main:
   - name: News
     url: /#news
     weight: 4
-  - name: Papers
+  - name: Publications
     url: papers/
     weight: 5
 

@@ -97,6 +97,37 @@
   {{ $config := dict "columns" ($block.design.columns | default 2) "len" (len $query) "fill_image" ($block.design.fill_image | default true) }}
   {{ partial "functions/render_view" (dict "fragment" "start" "page" $block "item" . "view" $view "config" $config) }}
 
+  <div class="flex flex-wrap gap-4 items-center justify-start mb-6">
+    <!-- Search -->
+    <input
+      type="text"
+      id="searchInput"
+      placeholder="Search..."
+      class="flex-1 min-w-[200px] px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 dark:bg-gray-800 dark:text-white dark:border-gray-600"
+    />
+
+    <!-- Type Filter -->
+    <select
+      id="typeFilter"
+      class="px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 dark:bg-gray-800 dark:text-white dark:border-gray-600"
+    >
+      <option value="">Type</option>
+      <option value="preprint">Preprint</option>
+      <option value="journal">Journal</option>
+      <option value="conference">Conference</option>
+    </select>
+
+    <!-- Date Filter -->
+    <select
+      id="dateFilter"
+      class="px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 dark:bg-gray-800 dark:text-white dark:border-gray-600"
+    >
+      <option value="">Date</option>
+      <option value="newest">Newest</option>
+      <option value="oldest">Oldest</option>
+    </select>
+  </div>
+
   {{ range $index, $item := $query }}
     {{ partial "functions/render_view" (dict "page" $block "item" . "view" $view "index" $index "config" $config) }}
   {{end}}
@@ -142,3 +173,56 @@
   </div>
 
 {{ end }}
+
+<script>
+  document.addEventListener('DOMContentLoaded', function () {
+    const searchInput = document.getElementById('searchInput');
+    const typeFilter = document.getElementById('typeFilter');
+    const dateFilter = document.getElementById('dateFilter');
+    const items = Array.from(document.querySelectorAll('.view-citation'));
+
+    function normalize(text) {
+      return text?.toLowerCase() || '';
+    }
+
+    function applyFilters() {
+      const query = normalize(searchInput.value);
+      const type = normalize(typeFilter.value);
+      const date = normalize(dateFilter.value);
+
+      let sortedItems = items;
+
+      // Filter items
+      sortedItems.forEach(item => {
+        const title = normalize(item.querySelector('a')?.textContent);
+        const meta = normalize(item.textContent);
+
+        const matchesSearch = title.includes(query);
+        const matchesType = type ? meta.includes(type) : true;
+
+        item.style.display = matchesSearch && matchesType ? '' : 'none';
+      });
+
+      // Sort by date
+      if (date === 'newest' || date === 'oldest') {
+        const direction = date === 'newest' ? -1 : 1;
+        const container = sortedItems[0]?.parentNode;
+        if (!container) return;
+
+        const visibleItems = sortedItems
+          .filter(el => el.style.display !== 'none')
+          .sort((a, b) => {
+            const yearA = parseInt(a.textContent.match(/\((\d{4})\)/)?.[1] || 0);
+            const yearB = parseInt(b.textContent.match(/\((\d{4})\)/)?.[1] || 0);
+            return (yearA - yearB) * direction;
+          });
+
+        visibleItems.forEach(el => container.appendChild(el));
+      }
+    }
+
+    searchInput.addEventListener('input', applyFilters);
+    typeFilter.addEventListener('change', applyFilters);
+    dateFilter.addEventListener('change', applyFilters);
+  });
+</script>
