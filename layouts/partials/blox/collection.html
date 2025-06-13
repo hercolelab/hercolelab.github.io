@@ -17,13 +17,18 @@
 
 {{/* Query */}}
 {{ $query := site.RegularPages }}
-{{ $years := slice }}
+
+{{ $years_map := dict }}
 {{ range $p := $query }}
   {{ $year := $p.Date.Year }}
-  {{ if not (in $years $year) }}
-    {{ $years = $years | append $year }}
-  {{ end }}
+  {{ $years_map = merge $years_map (dict (string $year) true) }}
 {{ end }}
+{{ $years := slice }}
+{{ range $k, $_ := $years_map }}
+  {{ $years = $years | append (int $k) }}
+{{ end }}
+{{ $years = sort $years "desc" }}
+
 {{ $archive_page := "" }}
 
 {{/* Filters */}}
@@ -111,7 +116,7 @@
     <div class="flex gap-4 mb-4">
       <select id="yearFilter" class="p-2 border rounded">
         <option value="">Tutti gli anni</option>
-        {{ range (reverse (sort (uniq $years))) }}
+        {{ range $years }}
           <option value="{{ . }}">{{ . }}</option>
         {{ end }}
       </select>
