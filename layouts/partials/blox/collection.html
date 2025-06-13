@@ -111,7 +111,7 @@
     <div class="flex gap-4 mb-4">
       <select id="yearFilter" class="p-2 border rounded">
         <option value="">Tutti gli anni</option>
-        {{ range sort (uniq $years) "desc" }}
+        {{ range (reverse (sort (uniq $years))) }}
           <option value="{{ . }}">{{ . }}</option>
         {{ end }}
       </select>
