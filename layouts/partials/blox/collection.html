@@ -118,7 +118,7 @@
 
     </select>
 
-    <!-- Date Filter 
+    {{/* Date Filter 
     <select id="dateFilter"
             class="px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 dark:bg-gray-800 dark:text-white dark:border-gray-600">
       <option value="">All Years</option>
@@ -133,8 +133,8 @@
       {{ range sort $years "desc" }}
         <option value="{{ . }}">{{ . }}</option>
       {{ end }}
-    </select>
-    TO DO-->
+    </select> TODO: Implement date filter
+    */}}
   </div>
 
   {{ range $index, $item := $query }}
