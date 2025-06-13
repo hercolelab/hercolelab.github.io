@@ -17,6 +17,13 @@
 
 {{/* Query */}}
 {{ $query := site.RegularPages }}
+{{ $years := slice }}
+{{ range $p := $query }}
+  {{ $year := $p.Date.Year }}
+  {{ if not (in $years $year) }}
+    {{ $years = $years | append $year }}
+  {{ end }}
+{{ end }}
 {{ $archive_page := "" }}
 
 {{/* Filters */}}
@@ -97,8 +104,36 @@
   {{ $config := dict "columns" ($block.design.columns | default 2) "len" (len $query) "fill_image" ($block.design.fill_image | default true) }}
   {{ partial "functions/render_view" (dict "fragment" "start" "page" $block "item" . "view" $view "config" $config) }}
 
+  <div class="mb-6 w-full max-w-4xl mx-auto">
+    <input id="searchInput" type="text" placeholder="Cerca per titolo..."
+      class="w-full p-2 border rounded mb-4" />
+
+    <div class="flex gap-4 mb-4">
+      <select id="yearFilter" class="p-2 border rounded">
+        <option value="">Tutti gli anni</option>
+        {{ range sort (uniq $years) "desc" }}
+          <option value="{{ . }}">{{ . }}</option>
+        {{ end }}
+      </select>
+
+      <select id="typeFilter" class="p-2 border rounded">
+        <option value="">Type</option>
+        <option value="conference">Conference paper</option>
+        <option value="journal">Journal article</option>
+        <option value="preprint">Preprint</option>
+      </select>
+    </div>
+  </div>
+
   {{ range $index, $item := $query }}
+    {{ $type := .Params.publication_types | first }}
+    {{ $mapped_type := cond (in $type "conference") "conference" (cond (in $type "journal") "journal" "preprint") }}
+    <div class="publication-item" 
+        data-title="{{ .Title }}" 
+        data-year="{{ .Date.Year }}" 
+        data-type="{{ $mapped_type }}">
     {{ partial "functions/render_view" (dict "page" $block "item" . "view" $view "index" $index "config" $config) }}
+    </div>
   {{end}}
 
   {{ partial "functions/render_view" (dict "fragment" "end" "page" $block "item" . "view" $view) }}
@@ -142,3 +177,35 @@
   </div>
 
 {{ end }}
+
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+  const searchInput = document.getElementById("searchInput");
+  const yearFilter = document.getElementById("yearFilter");
+  const typeFilter = document.getElementById("typeFilter");
+
+  function filterItems() {
+    const searchText = searchInput.value.toLowerCase();
+    const year = yearFilter.value;
+    const type = typeFilter.value;
+
+    const items = document.querySelectorAll(".publication-item");
+
+    items.forEach(item => {
+      const title = item.dataset.title.toLowerCase();
+      const itemYear = item.dataset.year;
+      const itemType = item.dataset.type;
+
+      const matchesTitle = title.includes(searchText);
+      const matchesYear = !year || itemYear === year;
+      const matchesType = !type || itemType === type;
+
+      item.style.display = (matchesTitle && matchesYear && matchesType) ? "" : "none";
+    });
+  }
+
+  searchInput.addEventListener("input", filterItems);
+  yearFilter.addEventListener("change", filterItems);
+  typeFilter.addEventListener("change", filterItems);
+});
+</script>
