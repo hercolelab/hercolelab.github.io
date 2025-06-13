@@ -18,6 +18,7 @@
 {{/* Query */}}
 {{ $query := site.RegularPages }}
 
+
 {{ $years_map := dict }}
 {{ range $p := $query }}
   {{ $year := $p.Date.Year }}
@@ -27,7 +28,15 @@
 {{ range $k, $_ := $years_map }}
   {{ $years = $years | append (int $k) }}
 {{ end }}
-{{ $years = sort $years }}
+{{ $max := 3000 }}
+{{ $min := 1900 }}
+{{ $sorted_years := slice }}
+{{ range seq $max -1 $min }}
+  {{ if in $years . }}
+    {{ $sorted_years = $sorted_years | append . }}
+  {{ end }}
+{{ end }}
+
 
 
 {{ $archive_page := "" }}
@@ -117,11 +126,10 @@
     <div class="flex gap-4 mb-4">
       <select id="yearFilter" class="p-2 border rounded">
         <option value="">Tutti gli anni</option>
-        {{ range (slice $years | last (len $years) | reverse) }}
+        {{ range $sorted_years }}
           <option value="{{ . }}">{{ . }}</option>
         {{ end }}
       </select>
-
 
       <select id="typeFilter" class="p-2 border rounded">
         <option value="">Type</option>
