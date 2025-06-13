@@ -195,10 +195,11 @@
       // Filter items
       sortedItems.forEach(item => {
         const title = normalize(item.querySelector('a')?.textContent);
-        const meta = normalize(item.textContent);
+        const authors = normalize(item.querySelector('.li-cite-author')?.textContent);
+        const fullText = title + ' ' + authors;
 
-        const matchesSearch = title.includes(query);
-        const matchesType = type ? meta.includes(type) : true;
+        const matchesSearch = fullText.includes(query);
+        const matchesType = type ? item.textContent.toLowerCase().includes(type) : true;
 
         item.style.display = matchesSearch && matchesType ? '' : 'none';
       });
