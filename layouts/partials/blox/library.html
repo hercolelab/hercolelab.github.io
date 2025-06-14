@@ -130,9 +130,12 @@
           {{ $years = $years | append $year }}
         {{ end }}
       {{ end }}
-      {{ range reverse (sort $years) }}
-        <option value="{{ . }}">{{ . }}</option>
+      {{ $sorted_years := sort $years }}
+      {{ range $i := seq (sub (len $sorted_years) 1) -1 0 }}
+        {{ $year := index $sorted_years $i }}
+        <option value="{{ $year }}">{{ $year }}</option>
       {{ end }}
+
     </select>
   </div>
 
