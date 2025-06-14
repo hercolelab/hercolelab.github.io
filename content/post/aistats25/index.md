@@ -19,9 +19,9 @@ Understanding Graph Neural Networks (GNNs) remains a challenging task, especiall
 
 We introduce a novel approach that leverages open-source Large Language Models (LLMs) to transform counterfactual explanations for GNNs into natural language descriptions. This allows for:
 
-✅ More human-readable and intuitive explanations
-✅ Improved accessibility for non-expert users
-✅ Better transparency in critical applications, such as fraud detection, financial decision-making, and healthcare
+(i) More human-readable and intuitive explanations
+(ii) Improved accessibility for non-expert users
+(iii) Better transparency in critical applications, such as fraud detection, financial decision-making, and healthcare
 
 📊 Our method was evaluated using state-of-the-art counterfactual explainers and multiple graph datasets, demonstrating its effectiveness through both novel evaluation metrics and human assessments.
 We believe this work is a step toward making AI explainability more interpretable and actionable! 🚀
