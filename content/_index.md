@@ -44,12 +44,10 @@ sections:
     design:
       columns: '1'
       width: 'wide'
-      spacing: 'lg'
       alignment: 'center'
       text_align: 'left'
       background:
         color: 'gray-900'
-      padding: 'lg'
       border_radius: 'xl'
       shadow: 'md'
 
