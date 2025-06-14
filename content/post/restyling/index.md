@@ -1,7 +1,7 @@
 ---
 title: 🎨 Hercole Lab has a new style!
 summary: Driven by the growth of our team and research activities, Hercole Lab is embracing a new visual identity.
-date: 2021-08-26
+date: 2025-06-14
 authors:
   - student5
 tags:
