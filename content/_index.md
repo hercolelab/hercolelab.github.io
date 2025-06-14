@@ -34,7 +34,10 @@ sections:
       title: 'About us'
       subtitle: ''
       text: |-
-        The research mission of the HERCOLE Lab is to make next-generation ML and AI systems more **understandable** to humans, **resilient** to adversarial attacks, and **decentralized** to edge devices.
+        At the **HERCOLE Lab**, our research mission is to advance the development of next-generation machine learning and artificial intelligence systems that are not only powerful, but also **understandable**, **resilient**, and **decentralized**.
+        We strive to make AI systems more **interpretable and transparent** to human users, enabling greater trust and collaboration. We design algorithms that are **robust to adversarial attacks**, ensuring reliability in real-world conditions. 
+        Moreover, we work to develop solutions that are efficiently deployable on edge devices, promoting **decentralized intelligence** and reducing dependency on centralized infrastructures.
+        Through interdisciplinary research and innovation, we aim to shape AI that is more human-centered, secure, and scalable.
     design:
       columns: '1'
 
