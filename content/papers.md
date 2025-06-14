@@ -10,7 +10,7 @@ design:
 
 sections:
 
-  - block: collection
+  - block: library
     content:
       title: Publications
       text: ""
