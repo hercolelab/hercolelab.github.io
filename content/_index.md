@@ -47,7 +47,8 @@ sections:
       spacing: 'lg'
       alignment: 'center'
       text_align: 'left'
-      background: 'gray-900'
+      background:
+        color: 'gray-900'
       padding: 'lg'
       border_radius: 'xl'
       shadow: 'md'
