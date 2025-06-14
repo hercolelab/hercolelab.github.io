@@ -55,6 +55,3 @@ education:
     year: 2002
 ---
 
-My current research interests are in the area of Human-Explainable, Robust, and COllaborative LEarning. In addition, I am also fascinated by topics related to Web Search and Mining and Computational Advertising.
-
-
