@@ -29,6 +29,8 @@ organizations:
 profiles:
   - icon: at-symbol
     url: 'mailto:edoardo.gabrielli@uniroma1.it'
+- icon: home
+    url: https://edogab33.github.io/academic-website/
   - icon: brands/x
     url: https://x.com/edogab_acc
   - icon: brands/linkedin
