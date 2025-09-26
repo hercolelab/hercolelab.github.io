@@ -1,0 +1,23 @@
+{
+  "name": "HugoBlox DevContainer",
+  "build": {
+    "dockerfile": "Dockerfile"
+  },
+  "workspaceFolder": "/workspace",
+  "forwardPorts": [1313],
+  "customizations": {
+    "vscode": {
+      "settings": {
+        "terminal.integrated.defaultProfile.linux": "bash"
+      }
+    }
+  },
+  "remoteUser": "vscode",
+  "features": {},
+  "mounts": [
+    "source=${localWorkspaceFolder},target=/workspace,type=bind"
+  ],
+  "containerEnv": {
+    "HUGO_ENVIRONMENT": "production"
+  }
+}
