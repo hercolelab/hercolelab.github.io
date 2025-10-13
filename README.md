@@ -12,4 +12,8 @@ To modify/add recent news, create a directory in `content/post`, following exist
 To modify/add recent projects, create a directory in `content/projects`, following existing examples.
 
 ## Papers
-Paper updates manually working in progress...
+To update papers, download the DBLP bibtex of the professor and save it to `content/publication/bibliography/`. Then, run
+```
+export PATH="$HOME/.local/bin:$PATH" && pip install academic
+export PATH="$HOME/.local/bin:$PATH" && academic import --bibtex content/publication/bibliography/bibliography.bib
+```
