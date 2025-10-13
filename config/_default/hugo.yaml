@@ -6,7 +6,7 @@
 # Website name
 title: HERCOLE Lab
 # Website URL
-baseURL: 'https://example.com/'
+baseURL: 'https://hercolelab.netlify.app/'
 
 ############################
 ## LANGUAGE
