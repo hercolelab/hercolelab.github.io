@@ -7,13 +7,15 @@ main:
   - name: About us
     url: /#aboutus
     weight: 2
-  - name: Meet the Team
+  - name: Members
     url: /#team
     weight: 3
   - name: News
-    url: /#news
+    url: news/
     weight: 4
   - name: Publications
     url: papers/
     weight: 5
-
+  - name: Projects
+    url: projects/
+    weight: 6

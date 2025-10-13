@@ -13,6 +13,18 @@ sections:
     content:
       username: student4
       text: ""
+  
+  - block: library
+    content:
+      title: Publications
+      count: 65535
+      filters:
+        folders:
+          - publication
+        author: Fabiano Veglianti
+        exclude_featured: false
+    design:
+      view: citation
 
 
 ---

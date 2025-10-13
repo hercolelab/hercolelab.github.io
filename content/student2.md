@@ -14,5 +14,17 @@ sections:
       username: student2
       text: ""
 
+  - block: library
+    content:
+      title: Publications
+      count: 65535
+      filters:
+        folders:
+          - publication
+        author: Vittoria Vineis
+        exclude_featured: false
+    design:
+      view: citation
+
 
 ---

@@ -13,6 +13,16 @@ sections:
     content:
       username: collaborator6
       text: ""
-
+  - block: library
+    content:
+      title: Publications
+      count: 65535
+      filters:
+        folders:
+          - publication
+        author: Cesare Campagnano
+        exclude_featured: false
+    design:
+      view: citation
 
 ---

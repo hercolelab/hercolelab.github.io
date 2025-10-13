@@ -6,8 +6,10 @@ To modify/add information about a specific member, go to `content/authors/{MEMBE
 
 ## News 
 
-To modify/add recent news create a directory in `content/post`, following predefined examples (e.g. `get-started`)
+To modify/add recent news, create a directory in `content/post`, following existing examples.
+
+## Projects
+To modify/add recent projects, create a directory in `content/projects`, following existing examples.
 
 ## Papers
-
-To modify/add papers of the lab create a directory in `content/publication`, following predefined examples (e.g. `preprint`)
+Paper updates manually working in progress...

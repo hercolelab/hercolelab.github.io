@@ -13,5 +13,16 @@ sections:
     content:
       username: collaborator3
       text: ""
+  - block: library
+    content:
+      title: Publications
+      count: 65535
+      filters:
+        folders:
+          - publication
+        author: Federico Siciliano
+        exclude_featured: false
+    design:
+      view: citation
 
 ---

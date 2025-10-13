@@ -13,5 +13,15 @@ sections:
     content:
       username: collaborator5
       text: ""
-
+  - block: library
+    content:
+      title: Publications
+      count: 65535
+      filters:
+        folders:
+          - publication
+        author: Ziheng Chen
+        exclude_featured: false
+    design:
+      view: citation
 ---

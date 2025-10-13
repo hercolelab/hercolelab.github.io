@@ -14,5 +14,16 @@ sections:
       username: student3
       text: ""
 
+  - block: library
+    content:
+      title: Publications
+      count: 65535
+      filters:
+        folders:
+          - publication
+        author: Edoardo Gabrielli
+        exclude_featured: false
+    design:
+      view: citation
 
 ---

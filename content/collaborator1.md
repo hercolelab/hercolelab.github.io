@@ -13,5 +13,15 @@ sections:
     content:
       username: collaborator1
       text: ""
-
+  - block: library
+    content:
+      title: Publications
+      count: 65535
+      filters:
+        folders:
+          - publication
+        author: Fabio Pinelli
+        exclude_featured: false
+    design:
+      view: citation
 ---

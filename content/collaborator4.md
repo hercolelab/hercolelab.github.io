@@ -13,6 +13,17 @@ sections:
     content:
       username: collaborator4
       text: ""
+  - block: library
+    content:
+      title: Publications
+      count: 65535
+      filters:
+        folders:
+          - publication
+        author: Giovanni Trappolini
+        exclude_featured: false
+    design:
+      view: citation
     
 
 ---

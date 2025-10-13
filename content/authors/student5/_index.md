@@ -53,4 +53,11 @@ education:
     institution: Sapienza University of Rome, Italy
     year: 2022
 
+
 ---
+
+Hello everyone! I’m a second-year PhD student at Sapienza University of Rome in the Computer Science Department.
+I work under the guidance of Professor Gabriele Tolomei and collaborate with HERCOLELab group. 
+
+My research pursues multiple research directions, including privacy on social networks, narrative explainable AI and agentic AI.
+

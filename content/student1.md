@@ -14,5 +14,16 @@ sections:
       username: student1
       text: ""
 
+  - block: library
+    content:
+      title: Publications
+      count: 65535
+      filters:
+        folders:
+          - publication
+        author: Flavio Giorgi
+        exclude_featured: false
+    design:
+      view: citation
 
 ---
