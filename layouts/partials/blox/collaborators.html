@@ -49,8 +49,7 @@
         {{ end }}
         {{ $person := $person_page.Params }}
         {{ $avatar := ($person_page.Resources.ByType "image").GetMatch "*avatar*" }}
-        {{ $n := add $idx 1 }}
-        {{ $path := printf "collaborator%d.md" $n }}
+        {{ $path := printf "%s.md" $author }}
         {{- $collaborator := site.GetPage "page" $path -}}
 
         <div class="resume-biography flex flex-col items-center text-center max-w-xs dark:text-white">
