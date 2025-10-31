@@ -7,3 +7,57 @@
 .resume-biography-3 .media-img {
   margin-bottom: 1rem;
 }
+
+/* Fix dark mode and centering for resume-biography on mobile */
+#home .blox-resume-biography {
+  background-color: black !important;
+}
+
+@media (prefers-color-scheme: dark) {
+  #home .blox-resume-biography {
+    background-color: black !important;
+  }
+}
+
+.dark #home .blox-resume-biography {
+  background-color: black !important;
+}
+
+/* Ensure proper centering on mobile */
+.blox-resume-biography .resume-biography {
+  width: 100%;
+  max-width: 100%;
+  margin: 0 auto;
+  text-align: center;
+  padding-left: 1rem;
+  padding-right: 1rem;
+}
+
+.blox-resume-biography .resume-biography > * {
+  width: 100%;
+  max-width: 100%;
+  text-align: center;
+}
+
+/* Center bio text and prose content on mobile */
+.blox-resume-biography .bio-text,
+.blox-resume-biography .prose {
+  text-align: center;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* Center avatar and other elements */
+.blox-resume-biography .avatar-wrapper,
+.blox-resume-biography .network-icon {
+  margin-left: auto;
+  margin-right: auto;
+  display: flex;
+  justify-content: center;
+}
+
+/* Ensure text elements are centered */
+.blox-resume-biography h3,
+.blox-resume-biography div {
+  text-align: center;
+}
