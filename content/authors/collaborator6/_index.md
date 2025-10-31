@@ -22,6 +22,7 @@ role: Senior Research Scientist
 # Organizations/Affiliations to display in Biography blox
 organizations:
   - name: Pinecone
+    url: https://www.pinecone.io/
 
 # Social network links
 # Need to use another icon? Simply download the SVG icon to your `assets/media/icons/` folder.

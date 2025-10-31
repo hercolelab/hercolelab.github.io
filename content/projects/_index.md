@@ -11,8 +11,8 @@ design:
 sections:
   - block: collection
     content:
-      title: Thesis Projects
-      text: Here we summarize topics on which we are working on, and for which we'd like students to take them further.
+      title: Projects
+      text: Here we summarize topics on which we are working on.
       filters:
         folders:
           - projects

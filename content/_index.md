@@ -66,6 +66,7 @@ sections:
         - student3
         - student4
         - student5
+        - student6
       title: PhD Students
 
   - block: collaborators
@@ -73,10 +74,12 @@ sections:
       usernames:
         - collaborator1
         - collaborator2
+        - collaborator7
+        - collaborator5
         - collaborator3
         - collaborator4
-        - collaborator5
         - collaborator6
+        
       title: External Collaborators
 
   - block: collection
