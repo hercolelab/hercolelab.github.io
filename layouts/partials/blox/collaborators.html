@@ -52,7 +52,7 @@
         {{ $path := printf "%s.md" $author }}
         {{- $collaborator := site.GetPage "page" $path -}}
 
-        <div class="resume-biography flex flex-col items-center text-center max-w-xs dark:text-white">
+        <div class="resume-biography flex flex-col items-center text-center max-w-xs text-black dark:text-white">
           {{ if $avatar }}
             <div class="avatar-wrapper mb-2">
               {{ $avatar_image := $avatar.Fill "150x150 Center" }}
@@ -76,7 +76,7 @@
                 <rb>
                   <a
                     href="{{ $collaborator.RelPermalink }}"
-                    class="text-white font-semibold text-primary-400 hover:text-primary-600 transition duration-150"
+                    class="text-black dark:text-white font-semibold text-primary-600 dark:text-primary-400 hover:text-primary-800 dark:hover:text-primary-600 transition duration-150"
                   >
                     {{ $person_page.Title }}
                   </a>
@@ -86,24 +86,24 @@
             {{- else -}}
               <a
                 href="{{ $collaborator.RelPermalink }}"
-                class="text-white font-semibold text-primary-400 hover:text-primary-600 transition duration-150"
+                class="text-black dark:text-white font-semibold text-primary-600 dark:text-primary-400 hover:text-primary-800 dark:hover:text-primary-600 transition duration-150"
               >
                 {{ $person_page.Title }}
               </a>
             {{- end -}}
           </div>
 
-          {{ with $person.role }}<h3 class="font-semibold mb-2">{{ . | markdownify | emojify }}</h3>{{ end }}
+          {{ with $person.role }}<h3 class="font-semibold mb-2 text-black dark:text-white">{{ . | markdownify | emojify }}</h3>{{ end }}
 
           {{ range $person.organizations }}
-            <div class="mb-2">
-              {{ with .url }}<a href="{{ . }}" target="_blank" rel="noopener">{{ end }}
+            <div class="mb-2 text-black dark:text-white">
+              {{ with .url }}<a href="{{ . }}" target="_blank" rel="noopener" class="text-black dark:text-white hover:text-primary-600 dark:hover:text-primary-400 transition duration-150">{{ end }}
               <div>{{ .name }}</div>
               {{ if .url }}</a>{{ end }}
             </div>
           {{ end }}
 
-          <ul class="network-icon dark:text-zinc-100">
+          <ul class="network-icon text-black dark:text-zinc-100">
             {{ range $person.profiles }}
               {{ $pack := or .icon_pack "fas" }}
               {{ $pack_prefix := $pack }}

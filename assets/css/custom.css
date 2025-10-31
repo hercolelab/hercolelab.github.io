@@ -61,3 +61,56 @@
 .blox-resume-biography div {
   text-align: center;
 }
+
+/* Force black text color for collaborators on mobile */
+@media (max-width: 768px) {
+  .blox-collaborators .resume-biography {
+    color: black !important;
+  }
+  
+  .blox-collaborators .resume-biography h3,
+  .blox-collaborators .resume-biography div:not(.network-icon) {
+    color: black !important;
+  }
+  
+  /* Set default link color to black, but allow hover to work */
+  .blox-collaborators .resume-biography a {
+    color: black !important;
+  }
+  
+  /* Preserve hover effects - use primary color on hover */
+  .blox-collaborators .resume-biography a:hover {
+    color: rgb(37 99 235) !important; /* primary-600 */
+  }
+  
+  /* Organization links hover */
+  .blox-collaborators .resume-biography div a:hover {
+    color: rgb(37 99 235) !important; /* primary-600 */
+  }
+  
+  .blox-collaborators .network-icon {
+    color: black !important;
+  }
+  
+  .blox-collaborators .network-icon svg,
+  .blox-collaborators .network-icon path {
+    fill: black !important;
+  }
+  
+  /* Allow hover on network icons */
+  .blox-collaborators .network-icon a:hover svg,
+  .blox-collaborators .network-icon a:hover path {
+    fill: rgb(37 99 235) !important; /* primary-600 */
+  }
+}
+
+/* Ensure dark mode still works on larger screens */
+@media (min-width: 769px) {
+  .dark .blox-collaborators .resume-biography {
+    color: white;
+  }
+  
+  .dark .blox-collaborators .resume-biography a {
+    color: white;
+  }
+}
