@@ -81,7 +81,7 @@
                     {{ $person_page.Title }}
                   </a>
                 </rb>
-                <rt>{{ $person.name_pronunciation }}</rt>
+                <rt class="text-black dark:text-white">{{ $person.name_pronunciation }}</rt>
               </ruby>
             {{- else -}}
               <a
@@ -98,7 +98,7 @@
           {{ range $person.organizations }}
             <div class="mb-2 text-black dark:text-white">
               {{ with .url }}<a href="{{ . }}" target="_blank" rel="noopener" class="text-black dark:text-white hover:text-primary-600 dark:hover:text-primary-400 transition duration-150">{{ end }}
-              <div>{{ .name }}</div>
+              <div class="text-black dark:text-white">{{ .name }}</div>
               {{ if .url }}</a>{{ end }}
             </div>
           {{ end }}
