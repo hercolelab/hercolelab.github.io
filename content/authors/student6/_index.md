@@ -28,7 +28,7 @@ organizations:
 # Need to use another icon? Simply download the SVG icon to your `assets/media/icons/` folder.
 profiles:
   - icon: at-symbol
-    url: 'mailto:lo.antonelli@uniroma1.it'
+    url: 'mailto:antonelli@diag.uniroma1.it'
   - icon: brands/linkedin
     url: https://www.linkedin.com/in/lorenzo-antonelli-7a2797317/
   - icon: brands/github
