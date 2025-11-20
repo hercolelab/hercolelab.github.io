@@ -428,6 +428,7 @@
       "rtl:-ml-4",
       "rtl:-rotate-180",
       "rtl:hidden",
+      "rtl:pr-4",
       "rtl:text-left",
       "scale-95",
       "scroll-my-6",
@@ -517,6 +518,12 @@
       "z-30"
     ],
     "ids": [
+      "1-learnable-actions-for-nabla-cmh",
+      "2-implement-nabla-ocmh",
+      "2-implement-o-nabla-cmh",
+      "3",
+      "3-review-and-implement-scalable-detection-algorithm",
+      "3-scalable-community-detection-algorithm",
       "aboutus",
       "code",
       "dateFilter",
@@ -552,6 +559,7 @@
       "teaching",
       "team",
       "test-students",
+      "thesis-projects",
       "top",
       "typeFilter",
       "video"

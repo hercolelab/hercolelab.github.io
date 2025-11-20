@@ -1,18 +1,18 @@
 ---
 title: 'Projects'
-date: 2024-05-19
+date: 
 type: landing
 
 design:
   # Section spacing
-  spacing: '5rem'
+  spacing: '3rem'
 
 # Page sections
 sections:
   - block: collection
     content:
       title: Projects
-      text: Here we summarize topics on which we are working on.
+      text: This section outlines our **current research focus**. For each topic, you can explore a **brief overview**, review our **related works**,   and discover available **thesis projects**.
       filters:
         folders:
           - projects

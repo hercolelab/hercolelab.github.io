@@ -2,6 +2,8 @@
 title: Community Membership Hiding
 date: 2025-10-13
 external_link: 
+authors:
+  - student5
 tags:
   - Social Networks
   - Community detection
@@ -41,9 +43,20 @@ where $\tau$ is a predefined threshold controlling the required level of dissimi
 - [The Right to Hide: Masking Community Affiliation via Minimal Graph Rewiring](https://arxiv.org/pdf/2502.00432)
 - [Evading Overlapping Community Detection via Proxy Node Injection](https://arxiv.org/pdf/2509.21211)
 
-## Prerequisites
-1. Less than 2 exams left in your careeer
-2. Coding skills
+## Thesis Projects
+
+### Prerequisites
+1. Less than two exams left in your career
+2. Coding skills:
     - Python
     - Github
-3. Graph theory
+3. Basics of Graph theory
+
+### 1. Learnable Actions for $\nabla$-CMH
+Integrate learnable actions in the $\nabla$-CMH [framework](https://arxiv.org/pdf/2502.00432) through Reinforcement Learning or other black-box-based techniques.
+
+### 2. Implement $\nabla$-OCMH
+Adapt the $\nabla$-CMH [framework](https://arxiv.org/pdf/2502.00432) to the overlapping community detection scenario, allowing the control of perturbations to injected proxy nodes.
+
+### 3. Scalable Community Detection Algorithm
+Review all the available implementations of detection algorithms. Try to create/fix algorithms to improve scalability for large graphs.

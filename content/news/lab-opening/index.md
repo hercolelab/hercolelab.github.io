@@ -1,11 +1,18 @@
 ---
-title: HERCOLE Lab is open!
-summary: We're happy to announce that the **H**uman-**E**xplainable, **R**obust, and **CO**llaborative **LE**arning (HERCOLE) Lab was officially launched today, August 26, 2021.
+title: HERCOLE Lab is open
+summary: We're happy to announce that the Human-Explainable, Robust, and COllaborative LEarning (HERCOLE) Lab is officially launched.
 date: 2021-08-26
 authors:
   - director
 tags:
   - Announcement
+design:
+      view: article-grid
+      fill_image: false
+      columns: 1
+      show_date: false
+      show_read_time: false
+      show_read_more: false
 ---
 
 The research mission of the HERCOLE Lab is to make next-generation ML and AI systems more **understandable** to humans, **resilient** to adversarial attacks, and **decentralized** to edge devices.

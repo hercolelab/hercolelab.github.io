@@ -1,5 +1,5 @@
 ---
-title: Our paper "Natural Language Counterfactual Explanations for Graphs Using Large Language Models" has been accepted at AISTATS 2025! 
+title: Our paper "Natural Language Counterfactual Explanations for Graphs Using Large Language Models" has been accepted at AISTATS 2025 
 summary: We introduce a novel approach that leverages open-source Large Language Models (LLMs) to transform counterfactual explanations for GNNs into natural language descriptions. 
 date: 2025-01-27
 authors:
