@@ -5,7 +5,7 @@ date: 2025-12-04
 authors:
   - student4
   - student1
-  - collaborator6
+  - collaborator2
   - director
 tags:
   - KDD2026
