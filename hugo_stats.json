@@ -520,9 +520,6 @@
     "ids": [
       "1-learnable-actions-for-nabla-cmh",
       "2-implement-nabla-ocmh",
-      "2-implement-o-nabla-cmh",
-      "3",
-      "3-review-and-implement-scalable-detection-algorithm",
       "3-scalable-community-detection-algorithm",
       "aboutus",
       "code",
