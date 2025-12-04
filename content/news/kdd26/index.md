@@ -11,7 +11,7 @@ tags:
   - KDD2026
   - Overfitting
   - Regularization
-  - Counterfactual examples
+  - Counterfactual Examples
 ---
 
 In this work, we connect two key properties of machine learning models: **generalization** and **explainability**. Specifically, we show that the more a model overfits its training data, the easier it becomes, on average, to find counterfactual examples (i.e., small input perturbations that change the model's prediction).
