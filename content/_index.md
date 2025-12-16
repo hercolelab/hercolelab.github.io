@@ -79,6 +79,8 @@ sections:
         - collaborator3
         - collaborator4
         - collaborator6
+        - collaborator8
+        - collaborator9
         
       title: External Collaborators
 

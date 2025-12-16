@@ -33,22 +33,41 @@
 {{ end }}
 {{ if $block.content.filters.tag }}
   {{ $archive_page = site.GetPage (printf "tags/%s" (urlize $block.content.filters.tag)) }}
-  {{ $query = $query | intersect $archive_page.Pages }}
+  {{ if $archive_page }}
+    {{ $query = $query | intersect $archive_page.Pages }}
+  {{ else }}
+    {{ $query = slice }}
+  {{ end }}
 {{ end }}
 {{ if $block.content.filters.category }}
   {{ $archive_page = site.GetPage (printf "categories/%s" (urlize $block.content.filters.category)) }}
-  {{ $query = $query | intersect $archive_page.Pages }}
+  {{ if $archive_page }}
+    {{ $query = $query | intersect $archive_page.Pages }}
+  {{ else }}
+    {{ $query = slice }}
+  {{ end }}
 {{ end }}
 {{ if $block.content.filters.publication_type }}
   {{ $archive_page = site.GetPage (printf "publication_types/%s" $block.content.filters.publication_type) }}
-  {{ $query = $query | intersect $archive_page.Pages }}
+  {{ if $archive_page }}
+    {{ $query = $query | intersect $archive_page.Pages }}
+  {{ else }}
+    {{ $query = slice }}
+  {{ end }}
 {{ end }}
 {{ if $block.content.filters.exclude_publication_type }}
-  {{ $query = $query | complement (site.GetPage (printf "publication_types/%s" $block.content.filters.exclude_publication_type)).Pages }}
+  {{ $exclude_page = site.GetPage (printf "publication_types/%s" $block.content.filters.exclude_publication_type) }}
+  {{ if $exclude_page }}
+    {{ $query = $query | complement $exclude_page.Pages }}
+  {{ end }}
 {{ end }}
 {{ if $block.content.filters.author }}
   {{ $archive_page = site.GetPage (printf "authors/%s" (urlize $block.content.filters.author)) }}
-  {{ $query = $query | intersect $archive_page.Pages }}
+  {{ if $archive_page }}
+    {{ $query = $query | intersect $archive_page.Pages }}
+  {{ else }}
+    {{ $query = slice }}
+  {{ end }}
 {{ end }}
 {{ if $block.content.filters.featured_only }}
   {{ $query = where $query "Params.featured" "==" true }}
@@ -131,9 +150,11 @@
         {{ end }}
       {{ end }}
       {{ $sorted_years := sort $years }}
-      {{ range $i := seq (sub (len $sorted_years) 1) -1 0 }}
-        {{ $year := index $sorted_years $i }}
-        <option value="{{ $year }}">{{ $year }}</option>
+      {{ if gt (len $sorted_years) 0 }}
+        {{ range $i := seq (sub (len $sorted_years) 1) -1 0 }}
+          {{ $year := index $sorted_years $i }}
+          <option value="{{ $year }}">{{ $year }}</option>
+        {{ end }}
       {{ end }}
 
     </select>
