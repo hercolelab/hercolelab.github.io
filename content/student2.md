@@ -2,6 +2,7 @@
 title: ""
 date: 2022-10-24
 type: landing
+url: /vittoria-vineis/
 
 design:
   # Default section spacing
