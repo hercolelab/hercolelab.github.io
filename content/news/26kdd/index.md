@@ -3,8 +3,8 @@ title: Our paper titled "Countering Overfitting with Counterfactual Examples" ha
 summary: We connect two key properties of machine learning models, generalization and explainability.
 date: 2025-12-04
 authors:
-  - student4
   - student1
+  - student4
   - collaborator2
   - director
 tags:

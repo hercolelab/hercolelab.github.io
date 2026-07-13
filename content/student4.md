@@ -2,6 +2,7 @@
 title: ""
 date: 2022-10-24
 type: landing
+url: /fabiano-veglianti/
 
 design:
   # Default section spacing
