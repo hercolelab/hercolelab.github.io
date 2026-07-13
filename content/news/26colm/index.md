@@ -1,7 +1,7 @@
 ---
-title: Our paper titled "When Large Language Models Know the Table: A Framework for Assessing Data Contamination in Tabular Datasets" has been accepted at COLM 2026
+title: 'Our paper titled "When Large Language Models Know the Table: A Framework for Assessing Data Contamination in Tabular Datasets" has been accepted at COLM 2026'
 summary: We connect two key properties of machine learning models, generalization and explainability.
-date: 2026-09-07
+date: 2026-07-08
 authors:
   - student5
   - student4
