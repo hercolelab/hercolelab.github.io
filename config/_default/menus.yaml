@@ -16,6 +16,9 @@ main:
   - name: Publications
     url: papers/
     weight: 5
-  - name: Projects
-    url: projects/
-    weight: 6
+  # Projects page is kept in `content/projects/` but not built or reachable.
+  # To restore it, uncomment below and remove the `_build`/`cascade` block in
+  # `content/projects/_index.md`.
+  # - name: Projects
+  #   url: projects/
+  #   weight: 6

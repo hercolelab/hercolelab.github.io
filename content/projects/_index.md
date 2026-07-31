@@ -3,6 +3,19 @@ title: 'Projects'
 date: 
 type: landing
 
+# Page is retired: not rendered, not listed, and not reachable by URL.
+# Content is kept here so it can be restored by deleting this block (and
+# re-adding the nav entry in `config/_default/menus.yaml`).
+_build:
+  render: never
+  list: never
+  publishResources: false
+cascade:
+  _build:
+    render: never
+    list: never
+    publishResources: false
+
 design:
   # Section spacing
   spacing: '3rem'
