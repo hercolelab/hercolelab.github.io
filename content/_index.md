@@ -61,7 +61,6 @@ sections:
   - block: students
     content:
       usernames:
-        - student1
         - student2
         - student3
         - student4
@@ -72,6 +71,7 @@ sections:
   - block: collaborators
     content:
       usernames:
+        - student1
         - collaborator1
         - collaborator2
         - collaborator7

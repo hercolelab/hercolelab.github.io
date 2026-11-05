@@ -17,9 +17,10 @@ superuser: false
 highlight_name: false
 
 # Role/position/tagline
-role: PhD Student in Computer Science
+role: CTO and CEO of TellMewAI; Postdoc at Sapienza University of Rome
 # Organizations/Affiliations to display in Biography blox
 organizations:
+  - name: TellMewAI
   - name: Sapienza Università di Roma
     url: https://www.uniroma1.it/it/pagina-strutturale/home
 
@@ -41,7 +42,7 @@ profiles:
 education:
   - area: PhD in Computer Science (XXXVIII Cycle)
     institution: Sapienza University of Rome, Italy
-    year: 2025 (expected)
+    year: May 26, 2026
 
   - area: MSc in Computer Science
     institution: Sapienza University of Rome, Italy
