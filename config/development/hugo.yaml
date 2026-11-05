@@ -1,0 +1,4 @@
+publishDir: .hugo-dev/public
+
+build:
+  writeStats: false
